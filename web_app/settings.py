@@ -1,0 +1,7 @@
+DEBUG = True
+
+SQLALCHEMY_DATABASE_URI = 'postgresql://nadia:12345@service_postgresql_di_dalam_docker/nadia_tiket'
+DATABASE_FILE = SQLALCHEMY_DATABASE_URI
+SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+SECRET_KEY = '12345'

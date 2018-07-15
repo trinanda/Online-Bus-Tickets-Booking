@@ -1,0 +1,139 @@
+<!--
+author: W3layouts
+author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Pesan Tiket</title>
+<!-- for-mobile-apps -->
+
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+
+<!-- //custom-theme -->
+<link href="https://trinanda.github.io/template_irwan/electrical_service_form-web/css/style.css" rel="stylesheet" type="text/css" media="all" />
+
+<!-- js -->
+<script type="text/javascript" src="https://trinanda.github.io/template_irwan/electrical_service_form-web/js/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+
+<!-- google fonts -->
+<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+<!-- google fonts -->
+
+</head>
+
+<body>
+<!-- banner -->
+	<div class="center-container">
+	<div class="banner-dott">
+		<div class="main">
+				<div class="w3layouts_main_grid">
+				<h1 class="w3layouts_head">Pesan Tiket</h1>
+					<form action="http://localhost:35250/metode_pembayaran" method="get" class="w3_form_post">
+					<!--<form action="#" method="post" class="w3_form_post">-->
+						<div class="w3_agileits_main_grid w3l_main_grid">
+							<span class="agileits_grid">
+								<label>Nama Anda <span class="star">*</span></label>
+								<input type="text" name="nama_pemesan" placeholder="Nama Anda" required="">
+							</span>
+						</div>
+						<!--<div class="w3_agileits_main_grid w3l_main_grid">-->
+							<!--<span class="agileits_grid">-->
+								<!--<label>Your Email <span class="star">*</span></label>-->
+								<!--<input type="email" name="Task" placeholder="Your Email" required="">-->
+							<!--</span>-->
+						<!--</div>-->
+						<div class="w3_agileits_main_grid w3l_main_grid">
+							<span class="agileits_grid">
+								<label>Nomor Telepon <span class="star">*</span></label>
+								<input type="text" name="nomor_telepon" placeholder="Nomor Telepon" required="">
+							</span>
+						</div>
+						<!--<div class="w3_agileits_main_grid w3l_main_grid">-->
+							<!--<span class="agileits_grid">-->
+								<!--<label>Company Name <span class="star">*</span></label>-->
+								<!--<input type="text" name="Task" placeholder="Company Name" required="">-->
+							<!--</span>-->
+						<!--</div>-->
+						<div class="w3_agileits_main_grid w3l_main_grid">
+							<span class="agileits_grid">
+								<label>Alamat Anda <span class="star">*</span></label>
+									<div class="form-input add">
+										<span class="form-sub-label line1">
+											<input type="text" name="alamat_anda" placeholder=" Alamat Anda " required="">
+										</span>
+									</div>
+									<div class="clear"></div>
+							</span>
+						</div>
+						<div class="w3_agileits_main_grid w3l_main_grid">
+							<span class="agileits_grid">
+								<label>Tujuan <span class="star">*</span></label>
+								<input type="text" name="tujuan" placeholder="Alamat Tujuan" required="">
+							</span>
+						</div>
+
+						<div class="agileits_w3layouts_main_grid w3ls_main_grid">
+							<span class="agileinfo_grid">
+								<label>Tanggal Ingin Berangkat <span class="star">*</span></label>
+								<div class="agileits_w3layouts_main_gridl">
+									<input class="date" id="datepicker" name="tanggal_ingin_berangkat" type="text" value="mm/dd/yyyy" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required="">
+								</div>
+								<!--<div class="agileits_w3layouts_main_gridr">-->
+									<!--<input type="time" name="Time" required="">-->
+								<!--</div>-->
+								<!--<div class="agileits_w3layouts_main_gridr">-->
+								<div class="#">
+									<select name="jam_ingin_berangkat" required="" style="color: black;">
+									  <option value="Jam 05.00">Jam 05.00</option>
+									  <option value="Jam 06.00">Jam 06.00</option>
+									  <option value="Jam 07.00">Jam 07.00</option>
+									  <option value="Jam 08.00">Jam 08.00</option>
+									  <option value="Jam 09.00">Jam 09.00</option>
+									  <option value="Jam 10.00">Jam 10.00</option>
+									  <option value="Jam 11.00">Jam 11.00</option>
+									  <option value="Jam 12.00">Jam 12.00</option>
+									  <option value="Jam 13.00">Jam 13.00</option>
+									  <option value="Jam 14.00">Jam 14.00</option>
+									  <option value="Jam 15.00">Jam 15.00</option>
+									  <option value="Jam 16.00">Jam 16.00</option>
+									  <option value="Jam 17.00">Jam 17.00</option>
+									  <option value="Jam 18.00">Jam 18.00</option>
+
+									</select>
+								</div>
+								<div class="clear"> </div>
+							</span>
+						</div>
+
+					<div class="w3_main_grid">
+						<div class="w3_main_grid_right">
+							<input type="submit" value="Submit">
+						</div>
+					</div>
+				</form>
+			</div>
+			
+		<!-- Calendar -->
+			<link rel="stylesheet" href="https://trinanda.github.io/template_irwan/electrical_service_form-web/css/jquery-ui.css" />
+				<script src="https://trinanda.github.io/template_irwan/electrical_service_form-web/js/jquery-ui.js"></script>
+					<script>
+						$(function() {
+							$( "#datepicker" ).datepicker();
+						});
+					</script>
+		<!-- //Calendar -->
+		
+
+		</div>
+	</div>
+	</div>
+<!-- //footer -->
+
+</body>
+</html>

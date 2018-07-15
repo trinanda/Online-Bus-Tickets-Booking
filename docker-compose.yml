@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  web_app_docker:
+    build: .
+    command: >
+      gunicorn -b 0.0.0.0:80
+      --access-logfile -
+      --reload
+      "web_app.app:create_app()"
+
+    volumes:
+      - '.:/web_app_docker'
+
+    ports:
+      - '35250:80'
+
+  service_postgresql_di_dalam_docker:
+    image: 'postgres:9.6'
+
+    environment:
+      POSTGRES_USER: 'nadia'
+      POSTGRES_PASSWORD: '12345'
+
+    volumes:
+      - '/var/lib/postgresql/data'
+
+    ports:
+      - '5440:5432'
