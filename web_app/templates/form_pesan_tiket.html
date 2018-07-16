@@ -62,19 +62,23 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<!--</div>-->
 						<div class="w3_agileits_main_grid w3l_main_grid">
 							<span class="agileits_grid">
-								<label>Alamat Anda <span class="star">*</span></label>
-									<div class="form-input add">
-										<span class="form-sub-label line1">
-											<input type="text" name="alamat_anda" placeholder=" Alamat Anda " required="">
-										</span>
-									</div>
-									<div class="clear"></div>
+								<label>Alamat<span class="star">*</span></label>
+								<!--<input type="text" name="alamat_anda" placeholder="Alamat Anda" required="">-->
+								<input type="text" name="alamat_anda" placeholder="Alamat Anda">
 							</span>
 						</div>
 						<div class="w3_agileits_main_grid w3l_main_grid">
 							<span class="agileits_grid">
 								<label>Tujuan <span class="star">*</span></label>
-								<input type="text" name="tujuan" placeholder="Alamat Tujuan" required="">
+								<!--<input type="text" name="tujuan" placeholder="Alamat Tujuan" required="">-->
+								<div class="#">
+									<select name="kode_rute" required="" style="color: black;">
+									  <option value="PDG">Padang</option>
+									  <option value="BKT">Bukittinggi</option>
+									  <option value="SCC">Sicincin</option>
+
+									</select>
+								</div>
 							</span>
 						</div>
 

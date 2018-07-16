@@ -56,3 +56,6 @@ class Data_pesananView(ModelView):
 # Create customized model view class
 class MyModelView(ModelView):
     pass
+
+class RuteView(ModelView):
+    pass
