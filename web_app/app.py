@@ -74,7 +74,6 @@ def create_app():
         kode_rute = request.args.get('kode_rute')
 
 
-
         if request.method == 'POST':
             session['NAMA_PEMESAN'] = nama_pemesan
             session['NOMOR_TELEPON'] = nomor_telepon
@@ -85,25 +84,26 @@ def create_app():
 
             rute = Rute()
             harga_tiket = None
-            kode_rute = None
             id_rute = None
             if kode_rute == 'PDG':
                 id_rute = Rute.query.get(1)
                 id_rute = id_rute.id_rute
-                harga_tiket = id_rute.ongkos
+                harga_tiket = Rute.query.filter_by(id_rute=1).first()
+                harga_tiket = harga_tiket.ongkos
                 id_rute = 1
             elif kode_rute == 'BKT':
                 id_rute = Rute.query.get(2)
                 id_rute = id_rute.id_rute
-                harga_tiket = id_rute.ongkos
+                harga_tiket = Rute.query.filter_by(id_rute=2).first()
+                harga_tiket = harga_tiket.ongkos
                 id_rute = 2
             elif kode_rute == 'SCC':
                 id_rute = Rute.query.get(3)
                 id_rute = id_rute.id_rute
-                harga_tiket = id_rute.ongkos
+                harga_tiket = Rute.query.filter_by(id_rute=3).first()
+                harga_tiket = harga_tiket.ongkos
                 id_rute = 3
-            else:
-                pass
+
 
             import string
             import random
@@ -124,7 +124,7 @@ def create_app():
             tanggal_ingin_berangkat = session['TANGGAL_INGIN_BERANGKAT']
             jam_ingin_berangkat = session['JAM_INGIN_BERANGKAT']
             status_pembayaran = status_pembayaran
-            # id_rute = 1
+
             insert_to_db = Data_pesanan(id_rute, kode_pemesan, nama_pemesan, nomor_telepon, alamat_anda,
                                         tanggal_pemesanan, tanggal_ingin_berangkat,
                                         jam_ingin_berangkat, harga_tiket, status_pembayaran)
