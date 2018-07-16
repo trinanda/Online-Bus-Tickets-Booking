@@ -50,12 +50,12 @@ class AdminAkses(ModelView):
 
 
 
-class Data_pesananView(ModelView):
+class Data_pesananView(AdminAkses):
     pass
 
 # Create customized model view class
-class MyModelView(ModelView):
+class MyModelView(AdminAkses):
     pass
 
-class RuteView(ModelView):
+class RuteView(AdminAkses):
     pass
