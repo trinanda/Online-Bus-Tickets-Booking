@@ -34,7 +34,20 @@ def create_app():
             get_url=url_for
         )
 
-    @app.route('/', methods = ["GET", "POST"])
+
+    @app.route('/', methods = ['GET', 'POST'])
+    def index():
+        if request.method == "POST":
+            return render_template('pilih_bis.html')
+        return render_template('halaman_utama.html')
+
+
+    @app.route('/pilih_bis')
+    def pilih_bis():
+        return render_template('pilih_bis.html')
+
+
+    @app.route('/form_pemesanan', methods = ["GET", "POST"])
     def form_pemesanan():
 
         if request.method == "get":

@@ -1,0 +1,222 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Tour Template</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="author" content="" />
+
+  <!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
+
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/animate.css') }}">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/icomoon.css') }}">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/magnific-popup.css') }}">
+
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/flexslider.css') }}">
+
+	<!-- Owl Carousel -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/owl.carousel.min.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/owl.theme.default.min.css') }}">
+
+	<!-- Date Picker -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-datepicker.css') }}">
+	<!-- Flaticons  -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='fonts/flaticon/font/flaticon.css') }}">
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+	<!-- Modernizr JS -->
+	<script src="{{ url_for('static', filename='js/modernizr-2.6.2.min.js') }}"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="{{ url_for('static', filename='js/respond.min.js') }}"></script>
+	<![endif]-->
+
+	</head>
+	<body>
+
+	<div class="colorlib-loader"></div>
+
+	<div id="page">
+		<nav class="colorlib-nav" role="navigation">
+			<div class="top-menu">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-xs-2">
+							<div id="colorlib-logo"><a href="index.html">Tour</a></div>
+						</div>
+						<div class="col-xs-10 text-right menu-1">
+							<ul>
+								<li class="active"><a href="index.html">Home</a></li>
+
+								<!-- <li><a href="contact.html">Contact</a></li> -->
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<aside id="colorlib-hero">
+			<div class="flexslider">
+				<ul class="slides">
+
+			   	<li style="background-image: url( {{ url_for('static', filename='images/img_bg_2.jpg') }} );">
+			   		<div class="overlay"></div>
+			   		<div class="container-fluid">
+			   			<div class="row">
+				   			<div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12 slider-text">
+				   				<div class="slider-text-inner text-center">
+				   					<!-- <h2>PO. Ayah</h2> -->
+				   					<!-- <h1>Dari Padang ke Payakumbuh</h1> -->
+				   					<h1>PO. Ayah</h1>
+				   				</div>
+				   			</div>
+				   		</div>
+			   		</div>
+			   	</li>
+			   	<li style="background-image: url( {{ url_for('static', filename='images/img_bg_5.jpg') }} );">
+			   		<div class="overlay"></div>
+			   		<div class="container-fluids">
+			   			<div class="row">
+				   			<div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12 slider-text">
+				   				<div class="slider-text-inner text-center">
+				   					<h2>Explore our most tavel agency</h2>
+				   					<h1>Our Travel Agency</h1>
+				   				</div>
+				   			</div>
+				   		</div>
+			   		</div>
+			   	</li>
+			   	<li style="background-image: url( {{ url_for('static', filename='images/img_bg_4.jpg') }} );">
+			   		<div class="overlay"></div>
+			   		<div class="container-fluid">
+			   			<div class="row">
+				   			<div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12 slider-text">
+				   				<div class="slider-text-inner text-center">
+				   					<h2>Experience the</h2>
+				   					<h1>Best Trip Ever</h1>
+				   				</div>
+				   			</div>
+				   		</div>
+			   		</div>
+			   	</li>
+			  	</ul>
+		  	</div>
+		</aside>
+		<div id="colorlib-reservation">
+			<!-- <div class="container"> -->
+				<div class="row">
+					<div class="search-wrap">
+						<div class="container">
+							<ul class="nav nav-tabs">
+								<li class="active"><a data-toggle="tab" href="#flight"><i class="flaticon-car"></i> Bis</a></li>
+							</ul>
+						</div>
+						<div class="tab-content">
+
+							<div id="car" class="tab-pane fade in active">
+								<form method="post" class="colorlib-form">
+
+								<div class="row">
+
+				              	 <div class="col-md-3">
+				                  <div class="form-group">
+				                    <label for="guests">Tujuan</label>
+				                    <div class="form-field">
+				                      <i class="icon icon-arrow-down3"></i>
+				                      <select name="people" id="people" class="form-control" style="color: black;" required="required">
+				                        <option value="Padang">Padang</option>
+				                        <option value="Bukittinggi">Bukittinggi</option>
+				                        <option value="Padang Panjang">Padang Panjang</option>
+				                        <option value="Sicincin">Sicincin</option>
+				                      </select>
+				                    </div>
+				                  </div>
+				                </div>
+
+				                <div class="col-md-3">
+				                  <div class="form-group">
+				                    <label for="date">Tanggal Keberangkatan:</label>
+				                    <div class="form-field">
+				                      <i class="icon icon-calendar2"></i>
+				                      <input type="text" id="date" class="form-control date" placeholder="Tanggal Keberangkatan" required>
+				                    </div>
+				                  </div>
+				                </div>
+
+								<div class="col-md-3">
+				              	 	<div class="form-group">
+				                    <label for="date">Jumlah kursi yang ingin di booking:</label>
+				                    <div class="form-field">
+				                      <input type="number" id="location" class="form-control" placeholder="1" value="1" required>
+				                    </div>
+				                  </div>
+								</div>
+
+				                <div class="col-md-2">
+				                  <input type="submit" name="submit" id="submit" value="Cari Bis" class="btn btn-primary btn-block">
+				                </div>
+				              </div>
+				            </form>
+				         </div>
+			         </div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		</div>
+
+
+	</div>
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up2"></i></a>
+	</div>
+
+	<!-- jQuery -->
+	<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+	<!-- jQuery Easing -->
+	<script src="{{ url_for('static', filename='js/jquery.easing.1.3.js') }}"></script>
+	<!-- Bootstrap -->
+	<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+	<!-- Waypoints -->
+	<script src="{{ url_for('static', filename='js/jquery.waypoints.min.js') }}"></script>
+	<!-- Flexslider -->
+	<script src="{{ url_for('static', filename='js/jquery.flexslider-min.js') }}"></script>
+	<!-- Owl carousel -->
+	<script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
+	<!-- Magnific Popup -->
+	<script src="{{ url_for('static', filename='js/jquery.magnific-popup.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/magnific-popup-options.js') }}"></script>
+	<!-- Date Picker -->
+	<script src="{{ url_for('static', filename='js/bootstrap-datepicker.js') }}"></script>
+	<!-- Stellar Parallax -->
+	<script src="{{ url_for('static', filename='js/jquery.stellar.min.js') }}"></script>
+	<!-- Main -->
+	<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+	</body>
+</html>
