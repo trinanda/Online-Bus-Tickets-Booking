@@ -154,17 +154,17 @@ $( document ).ready(function() {
 						<div class="tab-content">
 
 							<div id="car" class="tab-pane fade in active">
-								<form method="post" class="colorlib-form">
+								<form action="{{ url_for('bis') }}" method="get" class="colorlib-form">
 
 								<div class="row">
 
 								<div class="col-md-2">
 				                  <div class="form-group">
-				                    <label for="guests">Dari</label>
+				                    <label>Dari</label>
 				                    <div class="form-field">
 				                      <i class="icon icon-arrow-down3"></i>
-				                      <select name="people" id="people" class="form-control" style="color: black;" required="required">
-				                        <option value="Padang">Payakumbuh</option>
+				                      <select name="dari"class="form-control" style="color: black;" required="required">
+				                        <option value="Payakumbuh">Payakumbuh</option>
 				                        <option value="Padang">Padang</option>
 				                        <option value="Bukittinggi">Bukittinggi</option>
 				                        <option value="Padang Panjang">Padang Panjang</option>
@@ -176,12 +176,12 @@ $( document ).ready(function() {
 
 				              	 <div class="col-md-2">
 				                  <div class="form-group">
-				                    <label for="guests">Tujuan</label>
+				                    <label>Tujuan</label>
 				                    <div class="form-field">
 				                      <i class="icon icon-arrow-down3"></i>
-				                      <select name="people" id="people" class="form-control" style="color: black;" required="required">
-				                        <option value="Padang">Payakumbuh</option>
-				                        <option value="Padang">Padang</option>
+				                      <select name="tujuan" id="people" class="form-control" style="color: black;" required="required">
+										  <option value="Padang">Padang</option>
+										  <option value="Payakumbuh">Payakumbuh</option>
 				                        <option value="Bukittinggi">Bukittinggi</option>
 				                        <option value="Padang Panjang">Padang Panjang</option>
 				                        <option value="Sicincin">Sicincin</option>
@@ -195,7 +195,7 @@ $( document ).ready(function() {
 				                    <label >Tanggal Keberangkatan:</label>
 				                    <div class="form-field">
 				                      <i class="icon icon-calendar2"></i>
-				                      <input type="text" id="from-datepicker" class="form-control date" placeholder="Tanggal Keberangkatan" required>
+				                      <input name="tanggal_keberangkatan" type="text" id="from-datepicker" class="form-control date" placeholder="Tanggal Keberangkatan" required>
 				                    </div>
 				                  </div>
 				                </div>
@@ -204,7 +204,7 @@ $( document ).ready(function() {
 				              	 	<div class="form-group">
 				                    <label>Jumlah kursi yang ingin di booking:</label>
 				                    <div class="form-field">
-				                      <input type="number" id="location" class="form-control" placeholder="1" value="1" required>
+				                      <input name="jumlah_kursi_yang_di_booking" type="number" id="location" class="form-control" placeholder="1" value="1" required>
 				                    </div>
 				                  </div>
 								</div>

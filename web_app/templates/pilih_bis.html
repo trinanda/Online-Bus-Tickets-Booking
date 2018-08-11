@@ -18,6 +18,10 @@
             <!-- FOR -->
             <!-- FOR -->
 
+{% for RUTES in URUTAN_TAMPILAN %}
+
+            <form method="get" action="{{ url_for('pastikan_harga') }}">
+            <!--<form method="get" action="http://localhost:35250/pastikan_harga/{{ RUTES.id_rute }}">-->
             <div class="row">
                 <div class="col-sm-6">
 
@@ -25,7 +29,7 @@
                     <div class="brdr bgc-fff pad-10 box-shad btm-mrg-20 property-listing">
                         <div class="media">
                             <a class="pull-left" href="#" target="_parent">
-                            <img alt="image" class="img-responsive" src="http://images.prd.mris.com/image/V2/1/Yu59d899Ocpyr_RnF0-8qNJX1oYibjwp9TiLy-bZvU9vRJ2iC1zSQgFwW-fTCs6tVkKrj99s7FFm5Ygwl88xIA.jpg"></a>
+                            <!--<img alt="image" class="img-responsive" src="http://images.prd.mris.com/image/V2/1/Yu59d899Ocpyr_RnF0-8qNJX1oYibjwp9TiLy-bZvU9vRJ2iC1zSQgFwW-fTCs6tVkKrj99s7FFm5Ygwl88xIA.jpg"></a>-->
 
                             <div class="clearfix visible-sm"></div>
 
@@ -37,28 +41,31 @@
 
 
                                 <ul class="list-inline mrg-0 btm-mrg-10 clr-535353">
-                                    <li>Rp. 5555,00</li>
+                                    <li>Rp.{{ RUTES.ongkos }},00 / orang</li>
 
                                     <li style="list-style: none">|</li>
 
-                                    <li>28-09-2019</li>
+                                    <li>{{ RUTES.tanggal_keberangkatan }}</li>
 
                                     <li style="list-style: none">|</li>
 
-                                    <li>Jam 09:00</li>
+                                    <li>{{ RUTES.jam }}</li>
                                 </ul>
 
-                                <p class="hidden-xs">Pakumbuh ===> Padang</p><span class="fnt-smaller fnt-lighter fnt-arial">Courtesy of HS Fox & Roach-Chestnut Hill
-                                Evergreen</span>
+                                <p class="hidden-xs">{{ RUTES.dari }} ===> {{ RUTES.tujuan }}</p>
+                                <input type="hidden" name="id_rute" value="{{ RUTES.id_rute }}"> </input>
+                                <!--<span class="fnt-smaller fnt-lighter fnt-arial">Courtesy of HS Fox & Roach-Chestnut Hill-->
+                                <!--Evergreen</span>-->
                             </div>
+                                <input type="submit" value="Pilih Bis" style="float: right;" class="btn btn-primary btn-lg">
                         </div>
-                    </div><!-- End Listing-->
 
+                    </div><!-- End Listing-->
 
                 </div><!-- End Col -->
             </div><!-- End row -->
-
-
+</form>
+{% endfor %}
             <!--END FOR-->
             <!--END FOR-->
             <!--END FOR-->

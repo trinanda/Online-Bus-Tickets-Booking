@@ -11,7 +11,6 @@ from web_app.form import LoginFormView
 from web_app.models import db, Data_pesanan, Role, User, Rute, PO
 from web_app.views import Data_pesananView, MyModelView, RuteView, PoView
 
-
 def create_app():
 
     app = Flask(__name__)
@@ -48,23 +47,62 @@ def create_app():
 
     @app.route('/', methods = ['GET', 'POST'])
     def index():
-        tujuan = 'Padang'
-        tanggal_keberangkatan = '2018-08-11'
-        car_bis = db.session.query(Rute.id_rute, Rute.tujuan, Rute.ongkos, Rute.tanggal_keberangkatan, Rute.jam).\
-            filter(Rute.tujuan == tujuan, Rute.tanggal_keberangkatan == tanggal_keberangkatan).first()
-        print('test', car_bis)
+
+        if request.method == "get":
+
+            dari = request.form['dari']
+            tujuan = request.form['tujuan']
+            tanggal_keberangkatan = request.form['tanggal_keberangkatan']
+            jumlah_kursi_yang_di_booking = request.form['jumlah_kursi_yang_di_booking']
+
+            cari_bis = db.session.query(Rute.id_rute, Rute.tujuan, Rute.ongkos, Rute.tanggal_keberangkatan, Rute.jam). \
+                filter(Rute.dari == dari, Rute.tujuan == tujuan, Rute.tanggal_keberangkatan == tanggal_keberangkatan).first()
+
+            return render_template("bis.html")
 
         return render_template('halaman_utama.html')
 
+    @app.route('/bis', methods = ['GET', 'POST'])
+    def bis():
 
-    @app.route('/pilih_bis')
-    def pilih_bis():
+        tanggal_keberangkatan = request.args.get('tanggal_keberangkatan')
+        dari = request.args.get('dari')
+        tujuan = request.args.get('tujuan')
+        jumlah_kursi_yang_di_booking = request.args.get('jumlah_kursi_yang_di_booking')
 
-        return render_template('pilih_bis.html')
+        urutan_tampilan = db.session.query(Rute.id_rute, Rute.dari, Rute.tujuan, Rute.ongkos, Rute.tanggal_keberangkatan, Rute.jam).\
+            filter(Rute.tanggal_keberangkatan == tanggal_keberangkatan, Rute.dari == dari, Rute.tujuan == tujuan)
 
-    @app.route('/check')
-    def check():
-        return render_template('pilih_bis.html')
+
+
+        session['jumlah_kursi_yang_di_booking'] = jumlah_kursi_yang_di_booking
+
+
+        if request.method == "get":
+            return render_template("pastikan_harga.html")
+
+        return render_template('pilih_bis.html', URUTAN_TAMPILAN = urutan_tampilan)
+
+
+    @app.route('/pastikan_harga')
+    def pastikan_harga():
+        id_rute = request.args.get('id_rute')
+        jumlah_kursi_yang_di_booking = session['jumlah_kursi_yang_di_booking']
+
+        harga = db.session.query(Rute.ongkos).filter(Rute.id_rute == id_rute).first()
+        harga = harga[0]
+        harga_total = int(harga) * int(jumlah_kursi_yang_di_booking)
+
+        jam = db.session.query(Rute.jam).filter(Rute.id_rute == id_rute).first()
+        jam = jam[0]
+        tanggal_keberangkatan = db.session.query(Rute.tanggal_keberangkatan).filter(Rute.id_rute == id_rute).first()
+        tanggal_keberangkatan = tanggal_keberangkatan[0]
+        dari = db.session.query(Rute.dari).filter(Rute.id_rute == id_rute).first()
+        dari = dari[0]
+        tujuan = db.session.query(Rute.tujuan).filter(Rute.id_rute == id_rute).first()
+        tujuan = tujuan[0]
+        return render_template("pastikan_harga.html", HARGA_TOTAL=harga_total, TANGGAL_KEBERANGKATAN=tanggal_keberangkatan,
+                               JAM=jam, DARI=dari, TUJUAN=tujuan)
 
     @app.route('/kontak')
     def kontak():

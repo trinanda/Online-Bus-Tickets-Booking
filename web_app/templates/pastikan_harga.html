@@ -1,0 +1,113 @@
+<head>
+    <script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!--//tags -->
+	<link href="https://trinanda.github.io/grocery_shoppy_web/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="https://trinanda.github.io/grocery_shoppy_web/css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="https://trinanda.github.io/grocery_shoppy_web/css/font-awesome.css" rel="stylesheet">
+	<!--pop-up-box-->
+	<link href="https://trinanda.github.io/grocery_shoppy_web/css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
+	<!--//pop-up-box-->
+	<!-- price range -->
+	<link rel="stylesheet" type="text/css" href="https://trinanda.github.io/grocery_shoppy_web/css/jquery-ui1.css">
+	<!-- fonts -->
+	<link href="fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
+	<!-- flexslider -->
+	<link rel="stylesheet" href="https://trinanda.github.io/grocery_shoppy_web/css/flexslider.css" type="text/css" media="screen" />
+	<!-- fonts -->
+</head>
+<body>
+	<!-- top-header -->
+
+	<!-- checkout page -->
+	<div class="privacy">
+		<div class="container">
+			<!-- tittle heading -->
+			<h3 class="tittle-w3l">Keberangkatan
+				<span class="heading-style">
+					<i></i>
+					<i></i>
+					<i></i>
+				</span>
+			</h3>
+            <!--<h1>{{ HARGA_LAMA_MENGINAP }}</h1>-->
+			<!-- //tittle heading -->
+			<div class="checkout-right">
+				<!--<h4>Your shopping cart contains:-->
+					<!--<span>3 Products</span>-->
+				<!--</h4>-->
+				<div class="table-responsive">
+					<table class="timetable_sub">
+						<thead>
+							<tr>
+								<!--<th>No.</th>-->
+								<th>Nama PO</th>
+								<!--<th>Foto Kamar</th>-->
+								<!--<th>Lama Menginap</th>-->
+
+								<th>Harga Total</th>
+								<th>Tanggal Keberangkatan</th>
+								<th>Jam</th>
+								<th>Rute</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="rem1">
+								<td class="invert">#</td>
+								<td class="invert">{{ HARGA_TOTAL }}</td>
+								<td class="invert">{{ TANGGAL_KEBERANGKATAN }}</td>
+								<td class="invert">{{ JAM }}</td>
+								<td class="invert">{{ DARI }} ===> {{ TUJUAN }}</td>
+
+
+								<!--<td class="invert">#</td>-->
+								<!--<td class="invert">-->
+									<!--<div class="rem">-->
+										<!--<div class="close1"> </div>-->
+									<!--</div>-->
+								<!--</td>-->
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="checkout-left">
+				<div class="address_form_agile">
+					<!--<h4>Keberangkatan</h4>-->
+					<!--<form action="http://127.0.0.1:7575/payment" method="get" class="creditly-card-form agileinfo_form">-->
+					<form action="#" method="#" class="creditly-card-form agileinfo_form">
+
+                        <div class="creditly-wrapper wthree, w3_agileits_wrapper">
+							<div class="information-wrapper">
+
+								<input type="submit" name="submit" value="Pesan Sekarang" class="btn btn-primary btn-lg" style="width: 220px;"/>
+							</div>
+						</div>
+
+					</form>
+					<!--<div class="checkout-right-basket">-->
+						<!--<a href="payment.html">Make a Payment-->
+							<!--<span class="fa fa-hand-o-right" aria-hidden="true"></span>-->
+						<!--</a>-->
+					<!--</div>-->
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	<!-- //checkout page -->
+
+	<!-- js-files -->
+
+
+
+	<!-- //js-files -->
+
+</body>
