@@ -51,9 +51,10 @@ class User(db.Model, UserMixin):
 class Rute(db.Model):
     __tablename__ = 'rute'
     id_rute = Column(Integer, primary_key=True)
+    dari = Column(String)
     tujuan = Column(String)
     ongkos = Column(Integer)
-    jadwal_keberangkatan = Column(Date)
+    tanggal_keberangkatan = Column(Date)
     jam = Column(Time)
 
     user_id = Column(Integer, ForeignKey(User.id))

@@ -2,180 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d143f27-f569-4ca9-bb46-d8675d4303ad" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/if_enum_error" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/if_enum_error" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/versions/769fae7cfee4_1.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/versions/81fb1052ae96_2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web_app/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web_app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/css/animate.css" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/css/animate.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/css/bootstrap-datepicker.css" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/css/bootstrap-datepicker.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/css/bootstrap.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/css/bootstrap.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/css/bootstrap.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/css/flexslider.css" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/css/flexslider.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/css/icomoon.css" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/css/icomoon.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/css/keberangkatan.css" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/css/keberangkatan.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/css/magnific-popup.css" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/css/magnific-popup.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/css/owl.carousel.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/css/owl.carousel.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/css/owl.theme.default.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/css/owl.theme.default.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/css/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/css/style.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/fonts/bootstrap/glyphicons-halflings-regular.eot" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/fonts/bootstrap/glyphicons-halflings-regular.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/fonts/bootstrap/glyphicons-halflings-regular.svg" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/fonts/bootstrap/glyphicons-halflings-regular.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/fonts/bootstrap/glyphicons-halflings-regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/fonts/bootstrap/glyphicons-halflings-regular.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/fonts/bootstrap/glyphicons-halflings-regular.woff" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/fonts/bootstrap/glyphicons-halflings-regular.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/fonts/bootstrap/glyphicons-halflings-regular.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/fonts/bootstrap/glyphicons-halflings-regular.woff2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/fonts/flaticon/backup.txt" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/fonts/flaticon/backup.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/fonts/flaticon/font/Flaticon.eot" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/fonts/flaticon/font/Flaticon.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/fonts/flaticon/font/Flaticon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/fonts/flaticon/font/Flaticon.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/fonts/flaticon/font/Flaticon.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/fonts/flaticon/font/Flaticon.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/fonts/flaticon/font/Flaticon.woff" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/fonts/flaticon/font/Flaticon.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/fonts/flaticon/font/_flaticon.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/fonts/flaticon/font/_flaticon.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/fonts/flaticon/font/flaticon.css" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/fonts/flaticon/font/flaticon.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/fonts/flaticon/font/flaticon.html" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/fonts/flaticon/font/flaticon.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/fonts/flaticon/license/license.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/fonts/flaticon/license/license.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/fonts/icomoon/icomoon.eot" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/fonts/icomoon/icomoon.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/fonts/icomoon/icomoon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/fonts/icomoon/icomoon.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/fonts/icomoon/icomoon.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/fonts/icomoon/icomoon.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/fonts/icomoon/icomoon.woff" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/fonts/icomoon/icomoon.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/images/blog-1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/images/blog-1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/images/blog-2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/images/blog-2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/images/blog-3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/images/blog-3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/images/blog-4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/images/blog-4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/images/blog-5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/images/blog-5.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/images/cover-img-1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/images/cover-img-1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/images/cover-img-2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/images/cover-img-2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/images/cover-img-3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/images/cover-img-3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/images/cover-img-4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/images/cover-img-4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/images/cover-img-5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/images/cover-img-5.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/images/hotel-1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/images/hotel-1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/images/hotel-2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/images/hotel-2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/images/hotel-3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/images/hotel-3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/images/hotel-4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/images/hotel-4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/images/hotel-5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/images/hotel-5.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/images/hotel-6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/images/hotel-6.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/images/hotel-7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/images/hotel-7.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/images/hotel-8.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/images/hotel-8.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/images/hotel-9.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/images/hotel-9.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/images/img_bg_1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/images/img_bg_1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/images/img_bg_2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/images/img_bg_2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/images/img_bg_3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/images/img_bg_3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/images/img_bg_4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/images/img_bg_4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/images/img_bg_5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/images/img_bg_5.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/images/loader.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/images/loader.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/images/loc.png" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/images/loc.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/images/person1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/images/person1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/images/person2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/images/person2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/images/person3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/images/person3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/images/room-1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/images/room-1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/images/room-2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/images/room-2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/images/room-3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/images/room-3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/images/room-4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/images/room-4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/images/room-5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/images/room-5.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/images/room-6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/images/room-6.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/images/tour-1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/images/tour-1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/images/tour-2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/images/tour-2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/images/tour-3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/images/tour-3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/images/tour-4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/images/tour-4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/images/tour-5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/images/tour-5.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/images/tour-6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/images/tour-6.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/images/tour-7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/images/tour-7.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/images/tour-8.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/images/tour-8.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/js/bootstrap-datepicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/js/bootstrap-datepicker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/js/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/js/google_map.js" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/js/google_map.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/js/jquery.countTo.js" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/js/jquery.countTo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/js/jquery.easing.1.3.js" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/js/jquery.easing.1.3.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/js/jquery.flexslider-min.js" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/js/jquery.flexslider-min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/js/jquery.magnific-popup.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/js/jquery.magnific-popup.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/js/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/js/jquery.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/js/jquery.stellar.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/js/jquery.stellar.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/js/jquery.waypoints.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/js/jquery.waypoints.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/js/magnific-popup-options.js" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/js/magnific-popup-options.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/js/modernizr-2.6.2.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/js/modernizr-2.6.2.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/js/owl.carousel.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/js/owl.carousel.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/js/respond.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/js/respond.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/_bootstrap-compass.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/_bootstrap-compass.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/_bootstrap-mincer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/_bootstrap-mincer.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/_bootstrap-sprockets.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/_bootstrap-sprockets.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/_alerts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/_alerts.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/_badges.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/_badges.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/_breadcrumbs.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/_breadcrumbs.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/_button-groups.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/_button-groups.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/_buttons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/_buttons.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/_carousel.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/_carousel.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/_close.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/_close.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/_code.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/_code.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/_component-animations.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/_component-animations.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/_dropdowns.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/_dropdowns.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/_forms.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/_forms.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/_glyphicons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/_glyphicons.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/_grid.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/_grid.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/_input-groups.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/_input-groups.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/_jumbotron.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/_jumbotron.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/_labels.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/_labels.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/_list-group.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/_list-group.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/_media.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/_media.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/_mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/_mixins.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/_modals.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/_modals.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/_navbar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/_navbar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/_navs.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/_navs.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/_normalize.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/_normalize.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/_pager.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/_pager.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/_pagination.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/_pagination.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/_panels.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/_panels.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/_popovers.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/_popovers.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/_print.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/_print.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/_progress-bars.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/_progress-bars.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/_responsive-embed.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/_responsive-embed.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/_responsive-utilities.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/_responsive-utilities.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/_scaffolding.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/_scaffolding.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/_tables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/_tables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/_theme.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/_theme.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/_thumbnails.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/_thumbnails.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/_tooltip.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/_tooltip.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/_type.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/_type.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/_utilities.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/_utilities.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/_variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/_wells.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/_wells.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/mixins/_alerts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/mixins/_alerts.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/mixins/_background-variant.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/mixins/_background-variant.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/mixins/_border-radius.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/mixins/_border-radius.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/mixins/_buttons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/mixins/_buttons.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/mixins/_center-block.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/mixins/_center-block.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/mixins/_clearfix.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/mixins/_clearfix.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/mixins/_forms.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/mixins/_forms.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/mixins/_gradients.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/mixins/_gradients.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/mixins/_grid-framework.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/mixins/_grid-framework.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/mixins/_grid.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/mixins/_grid.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/mixins/_hide-text.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/mixins/_hide-text.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/mixins/_image.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/mixins/_image.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/mixins/_labels.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/mixins/_labels.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/mixins/_list-group.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/mixins/_list-group.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/mixins/_nav-divider.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/mixins/_nav-divider.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/mixins/_nav-vertical-align.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/mixins/_nav-vertical-align.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/mixins/_opacity.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/mixins/_opacity.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/mixins/_pagination.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/mixins/_pagination.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/mixins/_panels.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/mixins/_panels.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/mixins/_progress-bar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/mixins/_progress-bar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/mixins/_reset-filter.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/mixins/_reset-filter.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/mixins/_reset-text.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/mixins/_reset-text.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/mixins/_resize.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/mixins/_resize.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/mixins/_responsive-visibility.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/mixins/_responsive-visibility.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/mixins/_size.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/mixins/_size.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/mixins/_tab-focus.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/mixins/_tab-focus.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/mixins/_table-row.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/mixins/_table-row.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/mixins/_text-emphasis.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/mixins/_text-emphasis.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/mixins/_text-overflow.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/mixins/_text-overflow.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/bootstrap/mixins/_vendor-prefixes.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/bootstrap/mixins/_vendor-prefixes.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/static/sass/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/static/tour/sass/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/templates/admin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/templates/admin/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web_app/templates/halaman_utama.html" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/templates/halaman_utama.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web_app/templates/pilih_bis.html" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/templates/pilih_bis.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -195,26 +25,26 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="690" />
-          <entry key="py" value="1070" />
+          <entry key="html" value="853" />
+          <entry key="py" value="1198" />
           <entry key="txt" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="690" />
+          <entry key="HTML" value="853" />
           <entry key="Hoi4 file" value="3" />
-          <entry key="Python" value="1070" />
+          <entry key="Python" value="1198" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="Dockerfile" value="1" />
           <entry key="css" value="2" />
-          <entry key="html" value="11" />
+          <entry key="html" value="14" />
           <entry key="if_enum_error" value="1" />
           <entry key="jpg" value="1" />
-          <entry key="py" value="8" />
+          <entry key="py" value="9" />
           <entry key="txt" value="1" />
           <entry key="yml" value="3" />
         </counts>
@@ -223,11 +53,11 @@
         <counts>
           <entry key="CSS" value="2" />
           <entry key="Dockerfile" value="1" />
-          <entry key="HTML" value="11" />
+          <entry key="HTML" value="14" />
           <entry key="Hoi4 file" value="1" />
           <entry key="Image" value="1" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="8" />
+          <entry key="Python" value="9" />
           <entry key="YAML" value="3" />
         </counts>
       </usages-collector>
@@ -238,10 +68,40 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web_app/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="60" column="48" lean-forward="true" selection-start-line="60" selection-start-column="48" selection-end-line="60" selection-end-column="48" />
+            <state relative-caret-position="181">
+              <caret line="59" column="28" lean-forward="true" selection-start-line="59" selection-start-column="28" selection-end-line="59" selection-end-column="28" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web_app/templates/halaman_utama.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="182" column="73" selection-start-line="182" selection-start-column="73" selection-end-line="182" selection-end-column="73" />
+              <folding>
+                <element signature="n#style#0;n#li#0;n#ul#0;n#div#0;n#aside#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#1;n#ul#0;n#div#0;n#aside#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#2;n#ul#0;n#div#0;n#aside#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web_app/templates/pilih_bis.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="46" column="72" selection-start-line="46" selection-start-column="72" selection-end-line="46" selection-end-column="72" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#1;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -259,14 +119,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web_app/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="56" column="21" selection-start-line="56" selection-start-column="21" selection-end-line="56" selection-end-column="21" />
+              <caret line="53" column="8" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="8" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
-                <marker date="1533970878260" expanded="true" signature="291:393" ph="..." />
+                <marker date="1533986840066" expanded="true" signature="291:393" ph="..." />
               </folding>
             </state>
           </provider>
@@ -284,11 +144,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>electr</find>
-      <find>form action</find>
-      <find>jam</find>
-      <find>nama</find>
-      <find>Metode Pembayaran</find>
       <find>submit</find>
       <find>Irwan Fish</find>
       <find>form act</find>
@@ -314,6 +169,11 @@
       <find>.css</find>
       <find>rute.id_rute</find>
       <find>fkey</find>
+      <find>date</find>
+      <find>bootstrap.min.js</find>
+      <find>bootstrap.min.css</find>
+      <find>jquery-2.2.3.min.js</find>
+      <find>padang</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -340,8 +200,6 @@
         <option value="$PROJECT_DIR$/web_app/templates/form_pesan_tiket.html" />
         <option value="$PROJECT_DIR$/docker-compose.yml" />
         <option value="$PROJECT_DIR$/web_app/settings.py" />
-        <option value="$PROJECT_DIR$/web_app/templates/halaman_utama.html" />
-        <option value="$PROJECT_DIR$/web_app/templates/pilih_bis.html" />
         <option value="$PROJECT_DIR$/web_app/templates/kontak.html" />
         <option value="$PROJECT_DIR$/web_app/templates/check.html" />
         <option value="$PROJECT_DIR$/web_app/templates/payment.html" />
@@ -353,7 +211,9 @@
         <option value="$PROJECT_DIR$/migrations/versions/84f53900d351_.py" />
         <option value="$PROJECT_DIR$/migrations/if_enum_error" />
         <option value="$PROJECT_DIR$/web_app/app.py" />
+        <option value="$PROJECT_DIR$/web_app/templates/halaman_utama.html" />
         <option value="$PROJECT_DIR$/web_app/models.py" />
+        <option value="$PROJECT_DIR$/web_app/templates/pilih_bis.html" />
       </list>
     </option>
   </component>
@@ -384,6 +244,12 @@
               <item name="nadia-penjualan-tiket" type="b2602c69:ProjectViewProjectNode" />
               <item name="nadia-penjualan-tiket" type="462c0819:PsiDirectoryNode" />
               <item name="web_app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nadia-penjualan-tiket" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nadia-penjualan-tiket" type="462c0819:PsiDirectoryNode" />
+              <item name="web_app" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -436,8 +302,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="795" width="1366" height="741" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26100153" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20789075" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -448,7 +315,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49848256" visible="true" weight="0.36227044" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49848256" visible="true" weight="0.32387313" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5015175" side_tool="true" weight="0.32888147" />
       <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.49848256" weight="0.32888147" />
       <window_info anchor="bottom" id="Python Console" order="11" weight="0.32885906" />
@@ -458,6 +325,28 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17602427" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32885906" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49848256" visible="true" weight="0.3806344" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5015175" side_tool="true" weight="0.32888147" />
+      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.49848256" weight="0.32888147" />
+      <window_info anchor="bottom" id="Python Console" order="11" weight="0.32885906" />
+      <window_info anchor="right" id="R Graphics" order="0" />
+      <window_info anchor="right" id="R Packages" order="1" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="2" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
+    </layout-to-restore>
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.css" />
@@ -544,13 +433,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web_app/templates/form_pesan_tiket.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="38" column="67" selection-start-line="38" selection-start-column="67" selection-end-line="38" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web_app/templates/success.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -583,32 +465,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web_app/static/ContactFrom_v14/css/main.css">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web_app/templates/halaman_utama.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="84" column="86" selection-start-line="84" selection-start-column="86" selection-end-line="84" selection-end-column="86" />
-          <caret line="98" column="86" selection-start-line="98" selection-start-column="86" selection-end-line="98" selection-end-column="86" />
-          <caret line="111" column="86" selection-start-line="111" selection-start-column="86" selection-end-line="111" selection-end-column="86" />
-          <folding>
-            <element signature="n#style#0;n#li#0;n#ul#0;n#div#0;n#aside#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#1;n#ul#0;n#div#0;n#aside#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web_app/templates/pilih_bis.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="65" selection-start-column="65" selection-end-column="65" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#1;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web_app/templates/kontak.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -724,12 +580,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///usr/local/lib/python3.6/dist-packages/sqlalchemy/sql/sqltypes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2373">
+          <caret line="783" column="6" selection-start-line="783" selection-start-column="6" selection-end-line="783" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web_app/templates/form_pesan_tiket.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="11" lean-forward="true" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web_app/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="60" column="48" lean-forward="true" selection-start-line="60" selection-start-column="48" selection-end-line="60" selection-end-column="48" />
+        <state relative-caret-position="181">
+          <caret line="59" column="28" lean-forward="true" selection-start-line="59" selection-start-column="28" selection-end-line="59" selection-end-column="28" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web_app/templates/halaman_utama.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="182" column="73" selection-start-line="182" selection-start-column="73" selection-end-line="182" selection-end-column="73" />
+          <folding>
+            <element signature="n#style#0;n#li#0;n#ul#0;n#div#0;n#aside#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#1;n#ul#0;n#div#0;n#aside#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#2;n#ul#0;n#div#0;n#aside#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -737,10 +621,22 @@
     <entry file="file://$PROJECT_DIR$/web_app/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="56" column="21" selection-start-line="56" selection-start-column="21" selection-end-line="56" selection-end-column="21" />
+          <caret line="53" column="8" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="8" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
-            <marker date="1533970878260" expanded="true" signature="291:393" ph="..." />
+            <marker date="1533986840066" expanded="true" signature="291:393" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web_app/templates/pilih_bis.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="46" column="72" selection-start-line="46" selection-start-column="72" selection-end-line="46" selection-end-column="72" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#1;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

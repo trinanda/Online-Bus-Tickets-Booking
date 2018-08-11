@@ -54,6 +54,23 @@
 	<script src="{{ url_for('static', filename='tour/js/respond.min.js') }}"></script>
 	<![endif]-->
 
+		<script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
+<!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">-->
+<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>-->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.1/css/bootstrap-datepicker3.min.css">
+<script>
+$( document ).ready(function() {
+    $("#from-datepicker").datepicker({
+        format: 'yyyy-mm-dd'
+    });
+    $("#from-datepicker").on("change", function () {
+        var fromdate = $(this).val();
+        <!--alert(fromdate);-->
+    });
+});
+</script>
+
 	</head>
 	<body>
 
@@ -141,12 +158,13 @@
 
 								<div class="row">
 
-				              	 <div class="col-md-3">
+								<div class="col-md-2">
 				                  <div class="form-group">
-				                    <label for="guests">Tujuan</label>
+				                    <label for="guests">Dari</label>
 				                    <div class="form-field">
 				                      <i class="icon icon-arrow-down3"></i>
 				                      <select name="people" id="people" class="form-control" style="color: black;" required="required">
+				                        <option value="Padang">Payakumbuh</option>
 				                        <option value="Padang">Padang</option>
 				                        <option value="Bukittinggi">Bukittinggi</option>
 				                        <option value="Padang Panjang">Padang Panjang</option>
@@ -156,26 +174,42 @@
 				                  </div>
 				                </div>
 
-				                <div class="col-md-3">
+				              	 <div class="col-md-2">
 				                  <div class="form-group">
-				                    <label for="date">Tanggal Keberangkatan:</label>
+				                    <label for="guests">Tujuan</label>
+				                    <div class="form-field">
+				                      <i class="icon icon-arrow-down3"></i>
+				                      <select name="people" id="people" class="form-control" style="color: black;" required="required">
+				                        <option value="Padang">Payakumbuh</option>
+				                        <option value="Padang">Padang</option>
+				                        <option value="Bukittinggi">Bukittinggi</option>
+				                        <option value="Padang Panjang">Padang Panjang</option>
+				                        <option value="Sicincin">Sicincin</option>
+				                      </select>
+				                    </div>
+				                  </div>
+				                </div>
+
+				                <div class="col-md-2">
+				                  <div class="form-group">
+				                    <label >Tanggal Keberangkatan:</label>
 				                    <div class="form-field">
 				                      <i class="icon icon-calendar2"></i>
-				                      <input type="text" id="date" class="form-control date" placeholder="Tanggal Keberangkatan" required>
+				                      <input type="text" id="from-datepicker" class="form-control date" placeholder="Tanggal Keberangkatan" required>
 				                    </div>
 				                  </div>
 				                </div>
 
 								<div class="col-md-3">
 				              	 	<div class="form-group">
-				                    <label for="date">Jumlah kursi yang ingin di booking:</label>
+				                    <label>Jumlah kursi yang ingin di booking:</label>
 				                    <div class="form-field">
 				                      <input type="number" id="location" class="form-control" placeholder="1" value="1" required>
 				                    </div>
 				                  </div>
 								</div>
 
-				                <div class="col-md-2">
+				                <div class="col-md-3">
 				                  <input type="submit" name="submit" id="submit" value="Cari Bis" class="btn btn-primary btn-block">
 				                </div>
 				              </div>

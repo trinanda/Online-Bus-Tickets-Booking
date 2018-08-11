@@ -48,16 +48,18 @@ def create_app():
 
     @app.route('/', methods = ['GET', 'POST'])
     def index():
-
         tujuan = 'Padang'
-        tanggal_keberangkatan = '8/9/2018'
-        rute = db.session.query(Rute).filter_by()
+        tanggal_keberangkatan = '2018-08-11'
+        car_bis = db.session.query(Rute.id_rute, Rute.tujuan, Rute.ongkos, Rute.tanggal_keberangkatan, Rute.jam).\
+            filter(Rute.tujuan == tujuan, Rute.tanggal_keberangkatan == tanggal_keberangkatan).first()
+        print('test', car_bis)
 
         return render_template('halaman_utama.html')
 
 
     @app.route('/pilih_bis')
     def pilih_bis():
+
         return render_template('pilih_bis.html')
 
     @app.route('/check')
@@ -75,6 +77,10 @@ def create_app():
     @app.route('/invoice')
     def success():
         return render_template('invoice.html')
+
+    @app.route('/form')
+    def form():
+        return render_template('form_pesan_tiket.html')
 
     @app.route('/login', methods=['GET', 'POST'])
     def login():
