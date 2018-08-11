@@ -59,3 +59,9 @@ class MyModelView(AdminAkses):
 
 class RuteView(AdminAkses):
     pass
+
+class PoView(AdminAkses):
+    pass
+
+class Data_pesananView(AdminAkses):
+    pass

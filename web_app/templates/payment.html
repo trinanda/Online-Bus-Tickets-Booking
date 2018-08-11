@@ -1,0 +1,150 @@
+	<head>
+
+		<script type="text/javascript">
+
+
+			function pilih_bank(){
+
+				var form_bank = document.form_bank;
+
+				var nama_bank = form_bank.bank.value;
+
+				if (nama_bank == "BCA") {
+					form_bank.nomor_rekening.value = "081231209231";
+					<!--document.getElemenById(081231209231).checked = true;-->
+				}
+				else if (nama_bank == "BRI") {
+					form_bank.nomor_rekening.value = "12312389384";
+				}
+				else {
+					form_bank.nomor_rekening.value= "98234234";
+				}
+
+			}
+
+		</script>
+	</head>
+
+	<!-- payment page-->
+	<div class="privacy">
+		<div class="container">
+			<!-- tittle heading -->
+			<h3 class="tittle-w3l">Payment
+                <span class="heading-style">
+					<i></i>
+					<i></i>
+					<i></i>
+				</span>
+			</h3>
+			<!-- //tittle heading -->
+			<div class="checkout-right">
+				<!--Horizontal Tab-->
+				<div id="parentHorizontalTab">
+					<ul class="resp-tabs-list hor_1">
+						<li>Transfer</li>
+						<li>Paypal</li>
+					</ul>
+					<div class="resp-tabs-container hor_1">
+
+						<div>
+							<div class="vertical_post">
+								<!--<form action="http://127.0.0.1:7575/transfer" method="get" name="form_bank">-->
+								<form action="#" method="post" name="form_bank">
+								<!--<form action="{{ url_for('transfer') }}" method="post" name="form_bank">-->
+									<table border="0">
+										<tr>
+											<td style="width: 500px;">
+												<h5>Pilih Bank</h5>
+											</td>
+											<td>
+												<h5>Nomor Rekening</h5>
+											</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td rowspan="2">
+												<p>Silahkan di transfer ke nomor rekening berikut ini: </p>
+												<output name="nomor_rekening"></output>
+											</td>
+										</tr>
+									</table>
+									<div class="swit-radio">
+										<div class="check_box_one">
+											<div class="radio_one">
+												<label>
+													<input type="radio" name="bank" checked="checked" value="BCA" onchange="pilih_bank()">
+													<i></i>BCA</label>
+											</div>
+										</div>
+										<div class="check_box_one">
+											<div class="radio_one">
+												<label>
+													<input type="radio" name="bank" value="BRI" onchange="pilih_bank()">
+													<i></i>BRI</label>
+											</div>
+										</div>
+										<div class="check_box_one">
+											<div class="radio_one">
+												<label>
+													<input type="radio" name="bank" value="BNI" onchange="pilih_bank()">
+													<i></i>BNI</label>
+											</div>
+										</div>
+
+										<div class="clearfix"></div>
+									</div>
+									<input type="submit" value="Bayar Sekarang">
+								</form>
+							</div>
+						</div>
+						<div>
+							<div id="tab4" class="tab-grid" style="display: block;">
+								<div class="row">
+									<div class="col-md-6">
+										<img class="pp-img" src="https://trinanda.github.io/grocery_shoppy_web/images/paypal.png" alt="Image Alternative text" title="Image Title">
+										<h3><del>Menu ini belum tersedia, diharapkan bisa dikembangkan untuk berikutnya</del></h3>
+										<p>Penting: Anda akan diarahkan ke situs PayPal dengan aman untuk menyelesaikan pembayaran.</p>
+										<a class="btn btn-primary">Chgeckout via Paypal</a>
+									</div>
+									<div class="col-md-6 number-paymk">
+										<form class="cc-form" action="" method="#">
+											<div class="clearfix">
+												<div class="form-group form-group-cc-number">
+													<label>Card Number</label>
+													<input class="form-control" placeholder="xxxx xxxx xxxx xxxx" type="text">
+													<span class="cc-card-icon"></span>
+												</div>
+												<div class="form-group form-group-cc-cvc">
+													<label>CVV</label>
+													<input class="form-control" placeholder="xxxx" type="text">
+												</div>
+											</div>
+											<div class="clearfix">
+												<div class="form-group form-group-cc-name">
+													<label>Card Holder Name</label>
+													<input class="form-control" type="text">
+												</div>
+												<div class="form-group form-group-cc-date">
+													<label>Valid Thru</label>
+													<input class="form-control" placeholder="mm/yy" type="text">
+												</div>
+											</div>
+											<div class="checkbox checkbox-small">
+												<label>
+													<input class="i-check" type="checkbox" checked="">Add to My Cards</label>
+											</div>
+											<input type="submit" class="submit" value="Proceed Payment">
+										</form>
+									</div>
+								</div>
+
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<!--Plug-in Initialisation-->
+			</div>
+		</div>
+	</div>
+	<!-- //payment page -->

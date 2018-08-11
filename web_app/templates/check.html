@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <body>
+	<!-- top-header -->
+
+	<!-- checkout page -->
+	<div class="privacy">
+		<div class="container">
+			<!-- tittle heading -->
+			<h3 class="tittle-w3l">Check-In
+				<span class="heading-style">
+					<i></i>
+					<i></i>
+					<i></i>
+				</span>
+			</h3>
+            <!--<h1>{{ HARGA_LAMA_MENGINAP }}</h1>-->
+			<!-- //tittle heading -->
+			<div class="checkout-right">
+				<!--<h4>Your shopping cart contains:-->
+					<!--<span>3 Products</span>-->
+				<!--</h4>-->
+				<div class="table-responsive">
+					<table class="timetable_sub">
+						<thead>
+							<tr>
+								<!--<th>No.</th>-->
+								<th>Nama Kamar</th>
+								<th>Foto Kamar</th>
+								<!--<th>Lama Menginap</th>-->
+
+								<th>Harga Total Penginapan</th>
+								<th>Remove</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="rem1">
+								<!--<td class="invert">1</td>-->
+								<td class="invert">{{ NAMA_KAMAR }}<br><b>{{ NAMA_HOMESTAY }}</b></td>
+								<td class="thumb-image">
+									<a href="#">
+										<img src="{{ ROOM_IMAGES }}" alt="foto_kamar" class="img-responsive center-block" style="widht: 200px; height: 100px;">
+									</a>
+								</td>
+
+								<td class="invert">Rp. {{ TOTAL_HARGA_PENGINAPAN }} Selama {{ LAMA_HARI }} Hari</td>
+								<td class="invert">
+									<div class="rem">
+										<div class="close1"> </div>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="checkout-left">
+				<div class="address_form_agile">
+					<h4>Informasi Anda</h4>
+					<!--<form action="http://127.0.0.1:7575/payment" method="get" class="creditly-card-form agileinfo_form">-->
+					<form action="http://127.0.0.1:7575/payment" method="get" class="creditly-card-form agileinfo_form">
+						<div class="creditly-wrapper wthree, w3_agileits_wrapper">
+							<div class="information-wrapper">
+								<div class="first-row">
+									<div class="controls">
+										<span style="color: black; font-size: 16px; font-family: sans-serif;">Nama Lengkap :</span>
+										<input class="billing-address-name" type="text" name="NAMA_LENGKAP" placeholder="Nama Lengkap" required="" style="color: black;">
+									</div>
+									<div class="w3_agileits_card_number_grids">
+										<div class="w3_agileits_card_number_grid_left">
+											<div class="controls">
+												<span style="color: black; font-size: 16px; font-family: sans-serif;">Nomor telepon (Penting!!!, mulailah dengan tanda tambah "+" dan masukan beserta kode negara dan hilangkan awalan 0 contoh: +6285767553814) :</span>
+												<input type="text" placeholder='Nomor Telepon' name="NOMOR_TELEPON" required="" style="color: black;">
+											</div>
+										</div>
+										<div class="w3_agileits_card_number_grid_right">
+											<div class="controls">
+												<span style="color: black; font-size: 16px; font-family: sans-serif;">Email :</span>
+												<input type="email" placeholder="Email" name="EMAIL_PEMESAN" required="" style="color: black;">
+											</div>
+										</div>
+										<div class="clear"> </div>
+									</div>
+
+								</div>
+								<!--<button class="submit check_out">Pilih Metode Pembayaran</button>-->
+
+								<input type="submit" name="submit" value="Pilih Metode Pembayaran" class="btn btn-primary btn-lg" style="width: 220px;"/>
+							</div>
+						</div>
+					</form>
+					<!--<div class="checkout-right-basket">-->
+						<!--<a href="payment.html">Make a Payment-->
+							<!--<span class="fa fa-hand-o-right" aria-hidden="true"></span>-->
+						<!--</a>-->
+					<!--</div>-->
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
