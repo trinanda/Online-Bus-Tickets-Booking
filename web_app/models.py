@@ -97,13 +97,15 @@ class Data_pesanan(db.Model):
 
     rute_id = Column(Integer, ForeignKey(Rute.id_rute))
     po_id = Column(Integer, ForeignKey(PO.id_po))
+    po_name = relationship(PO)
 
-    def __init__(self, rute_id, kode_pemesanan, nama_pemesan, email_pemesan, nomor_telepon_pemesan, title_penumpang,
+    def __init__(self, rute_id, kode_pemesanan, po_name, nama_pemesan, email_pemesan, nomor_telepon_pemesan, title_penumpang,
                  nama_penumpang, tanggal_lahir_penumpang, tanggal_pesanan_tiket, jadwal_berangkat,
                  jumlah_kursi_yang_di_booking, harga_total, status_pembayaran):
 
         self.rute_id = rute_id
         self.kode_pemesanan = kode_pemesanan
+        self.po_name = po_name
         self.nama_pemesan = nama_pemesan
         self.email_pemesan = email_pemesan
         self.nomor_telepon_pemesan = nomor_telepon_pemesan

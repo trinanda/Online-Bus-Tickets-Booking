@@ -51,7 +51,9 @@ class AdminAkses(ModelView):
 
 
 class Data_pesananView(AdminAkses):
-    pass
+    column_list = ('kode_pemesanan', 'po_name', 'nama_pemesan', 'email_pemesan', 'nomor_telepon_pemesan', 'title_penumpang',
+                   'nama_penumpang', 'tanggal_lahir_penumpang', 'tanggal_pesanan_tiket', 'jadwal_berangkat',
+                   'jumlah_kursi_yang_di_booking', 'harga_total', 'status_pembayaran')
 
 # Create customized model view class
 class MyModelView(AdminAkses):
@@ -63,5 +65,3 @@ class RuteView(AdminAkses):
 class PoView(AdminAkses):
     pass
 
-class Data_pesananView(AdminAkses):
-    pass

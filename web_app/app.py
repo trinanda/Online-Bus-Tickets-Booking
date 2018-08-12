@@ -116,6 +116,7 @@ def create_app():
 
         nama_po = db.session.query(Rute.po_name, PO.nama_po).join(PO).filter(Rute.id_rute == id_rute).first()
         nama_po = nama_po[1]
+        session['nama_po'] = nama_po
 
         jumlah_kursi = jumlah_kursi_yang_di_booking
 
@@ -169,10 +170,13 @@ def create_app():
         title_penumpang = request.args.get('title_penumpang')
         nama_penumpang = request.args.get('nama_penumpang')
         tanggal_lahir = request.args.get('tanggal_lahir')
+        nama_po = session['nama_po']
+        nama_po = str(nama_po)
 
         if request.method == "POST":
 
             kode_pemesanan = nomor_invoice
+            po_name = nama_po
             nama_pemesan = nama_pemesan
             email_pemesan = email
             nomor_telepon_pemesan = nomor_telepon
@@ -185,9 +189,9 @@ def create_app():
             harga_total = session['harga_total']
             status_pembayaran = status
 
-            insert_to_db = Data_pesanan(rute_id ,kode_pemesanan, nama_pemesan, email_pemesan, nomor_telepon_pemesan, title_penumpang,
-                                        nama_penumpang, tanggal_lahir_penumpang, tanggal_pesanan_tiket, jadwal_berangkat,
-                                        jumlah_kursi_yang_di_booking, harga_total, status_pembayaran)
+            insert_to_db = Data_pesanan(rute_id ,kode_pemesanan, po_name, nama_pemesan, email_pemesan, nomor_telepon_pemesan,
+                                        title_penumpang,nama_penumpang, tanggal_lahir_penumpang, tanggal_pesanan_tiket,
+                                        jadwal_berangkat, jumlah_kursi_yang_di_booking, harga_total, status_pembayaran)
             db.session.add(insert_to_db)
             db.session.commit()
 
