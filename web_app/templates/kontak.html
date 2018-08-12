@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Contact V14</title>
+	<title>Informasi pemesan</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -26,44 +26,88 @@
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='ContactFrom_v14/css/util.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='ContactFrom_v14/css/main.css') }}">
 <!--===============================================================================================-->
+<!-- Date Picker -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='tour/css/bootstrap-datepicker.css') }}">
+	<!-- Flaticons  -->
+
+	<script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
+<!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">-->
+<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>-->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.1/css/bootstrap-datepicker3.min.css">
+<script>
+$( document ).ready(function() {
+    $("#from-datepicker").datepicker({
+        format: 'yyyy-mm-dd'
+    });
+    $("#from-datepicker").on("change", function () {
+        var fromdate = $(this).val();
+        <!--alert(fromdate);-->
+    });
+});
+</script>
+
 </head>
 <body>
 
 
 	<div class="container-contact100">
 		<div class="wrap-contact100">
-			<form class="contact100-form validate-form">
-				<span class="contact100-form-title">
-					Contact Us
+			<form class="contact100-form validate-form" method="post">
+				<span class="contact100-form-title" style="text-align: left;">
+					Kontak yang dapat dihubungi
 				</span>
 
-				<label class="label-input100" for="first-name">Your Name *</label>
-				<div class="wrap-input100 rs1 validate-input">
-					<input id="first-name" class="input100" type="text" name="first-name" placeholder="First name">
-					<span class="focus-input100"></span>
-				</div>
-				<div class="wrap-input100 rs1 validate-input">
-					<input class="input100" type="text" name="last-name" placeholder="Last name">
-					<span class="focus-input100"></span>
-				</div>
 
-				<label class="label-input100" for="email">Email Address *</label>
+				<label class="label-input100">Nama lengkap (sesuai KTP) *</label>
 				<div class="wrap-input100 validate-input">
-					<input id="email" class="input100" type="text" name="email" placeholder="Eg. example@email.com">
+					<input class="input100" type="text" name="nama_pemesan" placeholder="Nama lengkap">
 					<span class="focus-input100"></span>
 				</div>
 
-				<label class="label-input100" for="phone">Phone Number</label>
-				<div class="wrap-input100">
-					<input id="phone" class="input100" type="text" name="phone" placeholder="Eg. +1 800 000000">
-					<span class="focus-input100"></span>
-				</div>
-
-				<label class="label-input100" for="message">Message *</label>
+				<label class="label-input100">Email *</label>
 				<div class="wrap-input100 validate-input">
-					<textarea id="message" class="input100" name="message" placeholder="Please enter your comments..."></textarea>
+					<input class="input100" type="text" name="email" placeholder="Eg. nadia@gmail.com">
 					<span class="focus-input100"></span>
 				</div>
+
+				<label class="label-input100">Nomor Telepon *</label>
+				<div class="wrap-input100 validate-input">
+					<input class="input100" type="text" name="nomor_telepon" placeholder="+62812345678">
+					<span class="focus-input100"></span>
+				</div>
+
+				<span class="contact100-form-title" style="text-align: left;">
+					Data Penumpang
+				</span>
+
+				<label class="label-input100">Title </label>
+
+
+				<div class="wrap-input100 validate-input">
+					<select class="form-control" name="title_penumpang">
+						<option value="Tuan">Tuan</option>
+						<option value="Nyonya">Nyonya</option>
+						<option value="Nona">Nona</option>
+					</select>
+					<span class="focus-input100"></span>
+				</div>
+
+				<label class="label-input100">Nama lengkap (sesuai KTP) *</label>
+				<div class="wrap-input100 validate-input">
+					<input class="input100" type="text" name="nama_penumpang" placeholder="Nama Lengkap">
+					<span class="focus-input100"></span>
+				</div>
+
+
+				<div class="form-group">
+					<label >Tanggal Lahir:</label>
+					<div class="form-field">
+						<i class="icon icon-calendar2"></i>
+						<input name="tanggal_lahir" type="text" id="from-datepicker" class="form-control date" placeholder="Tanggal Lahir" required>
+					</div>
+				</div>
+
 
 				<div class="container-contact100-form-btn">
 					<button class="contact100-form-btn">
@@ -106,6 +150,26 @@
 
   gtag('config', 'UA-23581568-13');
 </script>
-
+<!-- jQuery -->
+	<script src="{{ url_for('static', filename='tour/js/jquery.min.js') }}"></script>
+	<!-- jQuery Easing -->
+	<script src="{{ url_for('static', filename='tour/js/jquery.easing.1.3.js') }}"></script>
+	<!-- Bootstrap -->
+	<script src="{{ url_for('static', filename='tour/js/bootstrap.min.js') }}"></script>
+	<!-- Waypoints -->
+	<script src="{{ url_for('static', filename='tour/js/jquery.waypoints.min.js') }}"></script>
+	<!-- Flexslider -->
+	<script src="{{ url_for('static', filename='tour/js/jquery.flexslider-min.js') }}"></script>
+	<!-- Owl carousel -->
+	<script src="{{ url_for('static', filename='tour/js/owl.carousel.min.js') }}"></script>
+	<!-- Magnific Popup -->
+	<script src="{{ url_for('static', filename='tour/js/jquery.magnific-popup.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='tour/js/magnific-popup-options.js') }}"></script>
+	<!-- Date Picker -->
+	<script src="{{ url_for('static', filename='tour/js/bootstrap-datepicker.js') }}"></script>
+	<!-- Stellar Parallax -->
+	<script src="{{ url_for('static', filename='tour/js/jquery.stellar.min.js') }}"></script>
+	<!-- Main -->
+	<script src="{{ url_for('static', filename='tour/js/main.js') }}"></script>
 </body>
 </html>

@@ -1,13 +1,13 @@
 import flask_admin
-from flask import Flask, render_template, request, session, url_for
+from flask import Flask, render_template, request, session, url_for, flash
 from flask_admin import Admin, helpers as admin_helpers
 from flask_bootstrap import Bootstrap
-from flask_login import LoginManager
+from flask_login import LoginManager, login_required, current_user, logout_user, login_user
 from flask_security import SQLAlchemyUserDatastore, Security
-from flask_security.utils import verify_password, login_user
+from flask_security.utils import verify_password
 from werkzeug.utils import redirect
 
-from web_app.form import LoginFormView
+from web_app.form import LoginFormView, AddRuteForm, EditRuteForm
 from web_app.models import db, Data_pesanan, Role, User, Rute, PO
 from web_app.views import Data_pesananView, MyModelView, RuteView, PoView
 
@@ -84,7 +84,7 @@ def create_app():
         return render_template('pilih_bis.html', URUTAN_TAMPILAN = urutan_tampilan)
 
 
-    @app.route('/pastikan_harga')
+    @app.route('/pastikan_harga', methods = ['GET', 'POST'])
     def pastikan_harga():
         id_rute = request.args.get('id_rute')
         jumlah_kursi_yang_di_booking = session['jumlah_kursi_yang_di_booking']
@@ -101,24 +101,38 @@ def create_app():
         dari = dari[0]
         tujuan = db.session.query(Rute.tujuan).filter(Rute.id_rute == id_rute).first()
         tujuan = tujuan[0]
+
+        if request.method == "get":
+            return render_template("kontak.html")
+
         return render_template("pastikan_harga.html", HARGA_TOTAL=harga_total, TANGGAL_KEBERANGKATAN=tanggal_keberangkatan,
                                JAM=jam, DARI=dari, TUJUAN=tujuan)
 
-    @app.route('/kontak')
+    @app.route('/kontak', methods = ['GET', 'POST'])
     def kontak():
+        if request.method == "POST":
+            nama_pemesan = request.form.get('nama_pemesan')
+            email = request.form.get('email')
+            nomor_telepon = request.form.get('nomor_telepon')
+
+            title_penumpang = request.form.get('title_penumpang')
+            nama_penumpang = request.form.get('nama_penumpang')
+            tanggal_lahir = request.form.get('tanggal_lahir')
+
+            return render_template("payment.html")
+
         return render_template('kontak.html')
 
-    @app.route('/payment')
+    @app.route('/payment', methods = ['GET', 'POST'])
     def payment():
+        if request.method == "get":
+            return render_template('invoice.html')
         return render_template('payment.html')
 
     @app.route('/invoice')
-    def success():
+    def invoice():
         return render_template('invoice.html')
 
-    @app.route('/form')
-    def form():
-        return render_template('form_pesan_tiket.html')
 
     @app.route('/login', methods=['GET', 'POST'])
     def login():
@@ -139,7 +153,98 @@ def create_app():
 
         return render_template('login.html', form=form)
 
+    @app.route('/dashboard')
+    @login_required
+    def dashboard():
+        if 'email' in session:
+            nama_po = current_user.po_name
+            all_user_data = Rute.query.filter_by(user_id=current_user.id)
+            return render_template('dashboard.html', rute=all_user_data, NAMA_PO=nama_po)
+        else:
+            return redirect(url_for('index'))
 
+    @app.route('/user_profile')
+    @login_required
+    def user_profile():
+        return render_template('user_profile.html')
+
+    @app.route('/logout')
+    @login_required
+    def logout():
+        logout_user()
+        return redirect(url_for('index'))
+
+    @app.route('/add', methods=['GET', 'POST'])
+    @login_required
+    def tambah_rute():
+        form = AddRuteForm(request.form)
+        nama_po = current_user.po_name
+        if request.method == 'POST':
+            if form.validate_on_submit():
+                new_rute = Rute(form.dari.data, form.tujuan.data, form.ongkos.data,
+                                form.tanggal_keberangkatan.data, form.jam.data,
+                                current_user.id, current_user.po_id, False)
+                db.session.add(new_rute)
+                db.session.commit()
+                return redirect(url_for('dashboard'))
+
+        return render_template('tambah_rute.html', form=form,  NAMA_PO=nama_po)
+
+    @app.route('/rute/<rute_id>')
+    def rute_details(rute_id):
+        rute_with_user = db.session.query(Rute, PO).join(PO).filter(Rute.id_rute == rute_id).first()
+        if rute_with_user is not None:
+            if rute_with_user.Rute.is_public:
+                return render_template('rute_detail.html', rute=rute_with_user)
+            else:
+                if current_user.is_authenticated and rute_with_user.Rute.user_id == current_user.id:
+                    return render_template('rute_detail.html', rute=rute_with_user)
+                # else:
+                #    flash('Error! Incorrect permissions to access this mantan.', 'error')
+        else:
+            flash('Error! Recipe does not exist.', 'error')
+        return redirect(url_for('index'))
+
+    @app.route('/rute_delete/<rute_id>')
+    def rute_delete(rute_id):
+        data = db.session.query(Rute, User).join(User).filter(Rute.id_rute == rute_id).first()
+        if data.Rute.is_public:
+            return render_template('rute_detail.html', rute=data)
+        else:
+            try:
+                if current_user.is_authenticated and data.Rute.user_id == current_user.id:
+                    data = Rute.query.filter_by(id_rute=rute_id).first()
+                    db.session.delete(data)
+                    db.session.commit()
+            except:
+                return 'Tidak bisa delete data rute, karena data rute sedang digunakan'
+        return redirect(url_for('dashboard'))
+
+    @app.route('/rute_edit/<rute_id>', methods=['GET', 'POST'])
+    def rute_edit(rute_id):
+        nama_po = current_user.po_name
+        data = db.session.query(Rute, User).join(User).filter(Rute.id_rute == rute_id).first()
+        form = EditRuteForm(request.form)
+        if request.method == 'POST':
+            if form.validate_on_submit():
+                if current_user.is_authenticated and data.Rute.user_id == current_user.id:
+                    data = Rute.query.filter_by(id_rute=rute_id).first()
+                    new_dari_rute = form.dari.data
+                    new_tujuan_rute = form.tujuan.data
+                    new_ongkos_rute = form.ongkos.data
+                    new_tanggal_keberangkatan_rute = form.tanggal_keberangkatan.data
+                    try:
+                        data.nama_rute = new_dari_rute
+                        data.keterangan_rute = new_tujuan_rute
+                        data.harga_rute = new_ongkos_rute
+                        data.status = new_tanggal_keberangkatan_rute
+                        db.session.commit()
+
+                    except Exception as e:
+                        return {'error': str(e)}
+                return redirect(url_for('dashboard'))
+
+        return render_template('rute_edit.html', form=form, rute=data, NAMA_PO=nama_po)
 
 
     return app

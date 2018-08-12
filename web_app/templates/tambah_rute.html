@@ -1,0 +1,46 @@
+{% extends "theme.html" %}
+
+{% block title %}
+	{{ super() }}
+    Tambah Rute
+{% endblock %}
+
+{% block body %}
+    {{ super() }}
+    <div class="row">
+    <div class="col-lg-12">
+        <h2 class="page-header">{{ NAMA_PO }}</h2>
+    </div>
+	</div>
+	<div class="row">
+	    <div class="col-lg-12">
+	        <div class="panel panel-info">
+	            <div class="panel-heading">
+
+	            </div>
+	            <!-- /.panel-heading -->
+	            <div class="panel-body">
+
+                    <div class="page-header">
+                        <h2>Tambahkan Rute</h2>
+                    </div>
+
+                    <form action="{{url_for('tambah_rute')}}" method="post" enctype="multipart/form-data">
+                        {{ form.csrf_token }}
+                        {{ form.dari(placeholder="Dari") }}
+                        {{ form.tujuan(placeholder="Tujuan") }}
+                        {{ form.ongkos(placeholder="Ongkos") }}
+                        {{ form.tanggal_keberangkatan(placeholder="Tanggal Keberangkatan") }}
+                        {{ form.jam(placeholder="jam") }}
+                        <button class="btn btn-sm btn-success" type="submit">Tambah Rute</button>
+                    </form>
+
+
+                </div>
+	            <!-- /.panel-body -->
+	        </div>
+	        <!-- /.panel -->
+	    </div>
+	    <!-- /.col-lg-12-->
+	</div>
+{% endblock %}

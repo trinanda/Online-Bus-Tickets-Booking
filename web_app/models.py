@@ -58,10 +58,22 @@ class Rute(db.Model):
     jam = Column(Time)
 
     user_id = Column(Integer, ForeignKey(User.id))
+    po_id = Column(Integer, ForeignKey(PO.id_po))
+
+    is_public = Column(Boolean(), nullable=False)
 
     def __repr__(self):
         return self.tujuan
 
+    def __init__(self, dari='', tujuan='', ongkos='', tanggal_keberangkatan='', jam='', id=1, po_id='', is_public=False):
+        self.dari = dari
+        self.tujuan = tujuan
+        self.ongkos = ongkos
+        self.tanggal_keberangkatan = tanggal_keberangkatan
+        self.jam = jam
+        self.user_id = id
+        self.po_id = po_id
+        self.is_public = is_public
 
 class Data_pesanan(db.Model):
     __tablename__ = 'data pesanan'

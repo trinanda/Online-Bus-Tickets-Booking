@@ -1,0 +1,46 @@
+{% extends "theme.html" %}
+
+{% block title %}
+	{{ super() }}
+    Edit Rute
+{% endblock %}
+
+{% block body %}
+    {{ super() }}
+    <div class="row">
+    <div class="col-lg-12">
+        <!--<h2 class="page-header">Halaman Dashboard</h2>-->
+        <h2 class="page-header">{{ NAMA_PO }}</h2>
+    </div>
+	</div>
+	<div class="row">
+	    <div class="col-lg-12">
+	        <div class="panel panel-info">
+	            <div class="panel-heading">
+
+	            </div>
+	            <!-- /.panel-heading -->
+	            <div class="panel-body">
+
+                    <div class="page-header">
+                        <h2>Edit</h2>
+                    </div>
+
+                    <form action="{{url_for('rute_edit', rute_id=rute.Rute.id_rute)}}" method="post">
+                        {{ form.csrf_token }}
+                        {{ form.dari(value = rute.Rute.dari) }}
+                        {{ form.tujuan(value = rute.Rute.tujuan) }}
+                        {{ form.ongkos(value = rute.Rute.ongkos) }}
+                        {{ form.tanggal_keberangkatan(value = rute.Rute.tanggal_keberangkatan) }}
+                        {{ form.jam(value = rute.Rute.jam) }}
+                        <button class="btn btn-sm btn-success" type="submit">Edit Rute</button>
+                    </form>
+
+                </div>
+	            <!-- /.panel-body -->
+	        </div>
+	        <!-- /.panel -->
+	    </div>
+	    <!-- /.col-lg-12-->
+	</div>
+{% endblock %}
