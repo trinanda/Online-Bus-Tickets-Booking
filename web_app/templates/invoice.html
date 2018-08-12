@@ -162,11 +162,11 @@
 	<body>
 		<header>
 			<h1>Invoice</h1>
-			<address>
-				<p>{{ NAMA_PEMBELI }}</p>
-				<p>{{ ALAMAT_PEMBELI }}</p>
-				<p>{{ NOMOR_HP_PEMBELI }}</p>
-			</address>
+			<!--<address>-->
+				<!--<p>{{ NAMA_PENUMPANG }}</p>-->
+				<!--<p>{{ ALAMAT_PEMBELI }}</p>-->
+				<!--<p>{{ NOMOR_HP_PEMBELI }}</p>-->
+			<!--</address>-->
 			<!--<span><img alt="" src="http://www.jonathantneal.com/examples/invoice/logo.png"><input type="file" accept="image/*"></span>-->
 		</header>
 		<article>
@@ -185,17 +185,23 @@
 			<table class="#">
 				<thead>
 					<tr>
-						<th><span >Ikan</span></th>
-						<th><span >Jumlah</span></th>
-						<th><span >Harga</span></th>
+						<th><span >Dari</span></th>
+						<th><span >Tujuan</span></th>
+						<th><span >Jumlah Bangku</span></th>
+						<th><span >Tanggal Berangkat</span></th>
+						<th><span >Jam</span></th>
+						<th><span >Harga Tiket</span></th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
 						<!--<td><a class="cut">-</a><span contenteditable>Front End Consultation</span></td>-->
-						<td><a class="#"></a><span >{{ NAMA_IKAN }}</span></td>
-						<td><span >{{ JUMLAH_PESANAN }} Kg</span></td>
-						<td><span data-prefix></span><span>Rp. {{ HARGA_SATU_IKAN }},00</span></td>
+						<td><a class="#"></a><span >{{ DARI }}</span></td>
+						<td><span >{{ TUJUAN }}</span></td>
+						<td><span >{{ JUMLAH_BANGKU }}</span></td>
+						<td><span >{{ TANGGAL_BERANGKAT }}</span></td>
+						<td><span >{{ JAM }}</span></td>
+						<td><span data-prefix></span><span>Rp. {{ HARGA_TIKET }},00</span></td>
 					</tr>
 				</tbody>
 			</table>
@@ -207,7 +213,7 @@
 				</tr>
 			</table>
 		</article>
-		<form action="http://192.168.100.4:9999/invoice" method="post">
+		<form action="http://192.168.100.4:35250/invoice" method="post">
               <input type="submit" value="Download PDF" class="btn btn-primary btn-lg" style="width: 150px;">
             </form>
         <!--<form action="">-->

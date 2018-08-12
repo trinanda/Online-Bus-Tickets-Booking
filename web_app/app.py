@@ -1,5 +1,5 @@
 import flask_admin
-from flask import Flask, render_template, request, session, url_for, flash
+from flask import Flask, render_template, request, session, url_for, flash, make_response
 from flask_admin import Admin, helpers as admin_helpers
 from flask_bootstrap import Bootstrap
 from flask_login import LoginManager, login_required, current_user, logout_user, login_user
@@ -14,7 +14,7 @@ from web_app.views import Data_pesananView, MyModelView, RuteView, PoView
 import string
 import random
 import time
-
+import pdfkit
 
 def create_app():
 
@@ -100,25 +100,30 @@ def create_app():
 
         harga = db.session.query(Rute.ongkos).filter(Rute.id_rute == id_rute).first()
         harga = harga[0]
+        session['harga_tiket'] = harga
         harga_total = int(harga) * int(jumlah_kursi_yang_di_booking)
 
         session['harga_total'] = harga_total
 
         jam = db.session.query(Rute.jam).filter(Rute.id_rute == id_rute).first()
         jam = jam[0]
+        session['jam'] = str(jam)
         tanggal_keberangkatan = db.session.query(Rute.tanggal_keberangkatan).filter(Rute.id_rute == id_rute).first()
         tanggal_keberangkatan = tanggal_keberangkatan[0]
         session['tanggal_keberangkatan'] = tanggal_keberangkatan
         dari = db.session.query(Rute.dari).filter(Rute.id_rute == id_rute).first()
         dari = dari[0]
+        session['dari'] = dari
         tujuan = db.session.query(Rute.tujuan).filter(Rute.id_rute == id_rute).first()
         tujuan = tujuan[0]
+        session['tujuan'] = tujuan
 
         nama_po = db.session.query(Rute.po_name, PO.nama_po).join(PO).filter(Rute.id_rute == id_rute).first()
         nama_po = nama_po[1]
         session['nama_po'] = nama_po
 
         jumlah_kursi = jumlah_kursi_yang_di_booking
+        session['jumlah_kursi_yang_di_booking'] = jumlah_kursi
 
         if request.method == "get":
             return render_template("kontak.html")
@@ -144,25 +149,6 @@ def create_app():
     @app.route('/payment', methods = ['GET', 'POST'])
     def payment(status='pending'):
 
-        # get invoice number
-        def generator_random(size=10, chars=string.ascii_uppercase + string.digits):
-            return ''.join(random.choice(chars) for x in range(size))
-
-        generate_invoice = 'TK' + generator_random() + 'INV'
-        session['GENERATE_INVOICE'] = generate_invoice
-        nomor_invoice = session['GENERATE_INVOICE']
-        # /get invoice number
-
-        # get current date
-        import time
-        tanggal_pemesanan = time.strftime("%d/%m/%Y")
-        tanggal_pemesanan_untuk_admin = time.strftime("%Y-%m-%d %H:%M:%S")
-        session['TANGGAL_PEMESANAN'] = tanggal_pemesanan
-        session['TANGGAL_PEMESANAN_UNTUK_ADMIN'] = tanggal_pemesanan_untuk_admin
-        tanggal_pemesanan = session['TANGGAL_PEMESANAN']
-        tanggal_pemesanan_untuk_admin = session['TANGGAL_PEMESANAN_UNTUK_ADMIN']
-        # /get current date
-
         rute_id = session['rute_id']
         nama_pemesan = request.args.get('nama_pemesan')
         email = request.args.get('email')
@@ -171,11 +157,36 @@ def create_app():
         nama_penumpang = request.args.get('nama_penumpang')
         tanggal_lahir = request.args.get('tanggal_lahir')
         nama_po = session['nama_po']
-        nama_po = str(nama_po)
+        dari = session['dari']
+        tujuan = session['tujuan']
+        jam = session['jam']
+        harga_tiket = session['harga_tiket']
+        jumlah_kursi = session['jumlah_kursi_yang_di_booking']
+
+        tanggal_keberangkatan = session['tanggal_keberangkatan']
+        tanggal_keberangkatan = tanggal_keberangkatan[4:17]
 
         if request.method == "POST":
+            # get invoice number
+            def generator_random(size=6, chars=string.ascii_uppercase + string.digits):
+                return ''.join(random.choice(chars) for x in range(size))
 
-            kode_pemesanan = nomor_invoice
+            generate_invoice = 'TK' + generator_random() + 'INV'
+            kode_pembeli = generate_invoice
+            session['KODE_PEMBELI'] = kode_pembeli
+            # /get invoice number
+
+            # get current date
+            import time
+            tanggal_pemesanan = time.strftime("%d/%m/%Y")
+            tanggal_pemesanan_untuk_admin = time.strftime("%Y-%m-%d %H:%M:%S")
+            session['TANGGAL_PEMESANAN'] = tanggal_pemesanan
+            session['TANGGAL_PEMESANAN_UNTUK_ADMIN'] = tanggal_pemesanan_untuk_admin
+            tanggal_pemesanan = session['TANGGAL_PEMESANAN']
+            tanggal_pemesanan_untuk_admin = session['TANGGAL_PEMESANAN_UNTUK_ADMIN']
+            # /get current date
+
+            kode_pemesanan = kode_pembeli
             po_name = nama_po
             nama_pemesan = nama_pemesan
             email_pemesan = email
@@ -183,9 +194,9 @@ def create_app():
             title_penumpang = title_penumpang
             nama_penumpang = nama_penumpang
             tanggal_lahir_penumpang = tanggal_lahir
-            tanggal_pesanan_tiket = tanggal_pemesanan_untuk_admin
-            jadwal_berangkat = session['tanggal_keberangkatan']
-            jumlah_kursi_yang_di_booking = session['jumlah_kursi_yang_di_booking']
+            tanggal_pesanan_tiket = tanggal_pemesanan
+            jadwal_berangkat = tanggal_keberangkatan
+            jumlah_kursi_yang_di_booking = jumlah_kursi
             harga_total = session['harga_total']
             status_pembayaran = status
 
@@ -195,13 +206,36 @@ def create_app():
             db.session.add(insert_to_db)
             db.session.commit()
 
-            return render_template('invoice.html')
+            return render_template('invoice.html', KODE_INVOICE=kode_pemesanan, TANGGAL_PESANAN=tanggal_pesanan_tiket,
+                                   DARI=dari, TUJUAN=tujuan, JUMLAH_BANGKU=jumlah_kursi_yang_di_booking, TANGGAL_BERANGKAT=jadwal_berangkat, JAM=jam,
+                                   HARGA_TIKET=harga_tiket, HARGA_TOTAL=harga_total)
 
         return render_template('payment.html')
 
-    @app.route('/invoice')
+    @app.route('/invoice', methods = ['GET', 'POST'])
     def invoice():
-        return render_template('invoice.html')
+        kode_pemesanan = session['KODE_PEMBELI']
+        tanggal_pesanan_tiket = session['TANGGAL_PEMESANAN']
+        dari = session['dari']
+        tujuan = session['tujuan']
+        jumlah_kursi = session['jumlah_kursi_yang_di_booking']
+        tanggal_keberangkatan = session['tanggal_keberangkatan']
+        tanggal_keberangkatan = tanggal_keberangkatan[4:17]
+        jam = session['jam']
+        harga_tiket = session['harga_tiket']
+        harga_total = session['harga_total']
+
+        if request.method == "POST":
+            data_pdf =  render_template('invoice.html', KODE_INVOICE=kode_pemesanan, TANGGAL_PESANAN=tanggal_pesanan_tiket,
+                                   DARI=dari, TUJUAN=tujuan, JUMLAH_BANGKU=jumlah_kursi,
+                               TANGGAL_BERANGKAT=tanggal_keberangkatan, JAM=jam, HARGA_TIKET=harga_tiket, HARGA_TOTAL=harga_total)
+            css = "web_app/static/style.css"
+            pdf = pdfkit.from_string(data_pdf, False, css=css)
+            response = make_response(pdf)
+            response.headers['Content-Type'] = 'applications/pdf'
+            response.headers['Content-Disposition'] = 'inline; filename=invoice.pdf'
+            return response
+
 
 
     @app.route('/login', methods=['GET', 'POST'])
