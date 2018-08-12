@@ -25,3 +25,4 @@ SECURITY_POST_REGISTER_VIEW = "/admin/"
 SECURITY_REGISTERABLE = True
 SECURITY_SEND_REGISTER_EMAIL = False
 #############################################################################################################
+
