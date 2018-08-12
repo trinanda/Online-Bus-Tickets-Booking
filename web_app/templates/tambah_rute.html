@@ -2,14 +2,14 @@
 
 {% block title %}
 	{{ super() }}
-    Tambah Rute
+    Tambahkan Jadwal Keberangkatan
 {% endblock %}
 
 {% block body %}
     {{ super() }}
     <div class="row">
     <div class="col-lg-12">
-        <h2 class="page-header">{{ NAMA_PO }}</h2>
+        <h2 class="page-header">PO.{{ NAMA_PO }}</h2>
     </div>
 	</div>
 	<div class="row">
@@ -22,7 +22,7 @@
 	            <div class="panel-body">
 
                     <div class="page-header">
-                        <h2>Tambahkan Rute</h2>
+                        <h2>Tambahkan Jadwal Keberangkatan</h2>
                     </div>
 
                     <form action="{{url_for('tambah_rute')}}" method="post" enctype="multipart/form-data">

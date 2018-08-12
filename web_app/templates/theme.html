@@ -96,7 +96,7 @@
                         </li>
                         {% if current_user.is_authenticated %}
                         <li>
-                            <a href="{{ url_for('tambah_rute') }}"><i class="fa fa-plus fa-fw"></i> Tambah Rute</a>
+                            <a href="{{ url_for('tambah_rute') }}"><i class="fa fa-plus fa-fw"></i> Tambah Jadwal keberangkatan</a>
                         </li>
                             {% if current_user.role == "superuser" %}
                             <li><a href="{{ url_for('admin_view_users') }}"><i class="fa fa-eye fa-fw"></i> View Users (Admin)</a></li>

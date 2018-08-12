@@ -14,13 +14,13 @@ class LoginFormView(FlaskForm):
 class AddRuteForm(FlaskForm):
     dari = StringField('Dari', validators=[DataRequired()])
     tujuan = StringField('Tujuan', validators=[DataRequired()])
-    ongkos = StringField('Ongkos', validators=[DataRequired()])
+    ongkos = IntegerField('Ongkos', validators=[DataRequired()])
     tanggal_keberangkatan = DateField('Tanggal Keberangkatan', format='%Y-%m-%d', validators=[DataRequired()])
     jam = TimeField('Jam', validators=[DataRequired()])
 
 class EditRuteForm(FlaskForm):
     dari = StringField('Dari', validators=[DataRequired()])
     tujuan = StringField('Tujuan', validators=[DataRequired()])
-    ongkos = StringField('Ongkos', validators=[DataRequired()])
+    ongkos = IntegerField('Ongkos', validators=[DataRequired()])
     tanggal_keberangkatan = DateField('Tanggal Keberangkatan', format='%Y-%m-%d', validators=[DataRequired()])
     jam = TimeField('Jam', validators=[DataRequired()])

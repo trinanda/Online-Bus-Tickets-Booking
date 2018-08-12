@@ -47,11 +47,8 @@
 					<table class="timetable_sub">
 						<thead>
 							<tr>
-								<!--<th>No.</th>-->
 								<th>Nama PO</th>
-								<!--<th>Foto Kamar</th>-->
-								<!--<th>Lama Menginap</th>-->
-
+								<th>Jumlah Kursi</th>
 								<th>Harga Total</th>
 								<th>Tanggal Keberangkatan</th>
 								<th>Jam</th>
@@ -60,8 +57,9 @@
 						</thead>
 						<tbody>
 							<tr class="rem1">
-								<td class="invert">#</td>
-								<td class="invert">{{ HARGA_TOTAL }}</td>
+								<td class="invert">{{ NAMA_PO }}</td>
+								<td class="invert">{{ JUMLAH_KURSI }}</td>
+								<td class="invert">Rp.{{ HARGA_TOTAL }},00</td>
 								<td class="invert">{{ TANGGAL_KEBERANGKATAN }}</td>
 								<td class="invert">{{ JAM }}</td>
 								<td class="invert">{{ DARI }} ===> {{ TUJUAN }}</td>

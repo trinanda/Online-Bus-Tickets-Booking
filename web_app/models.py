@@ -59,6 +59,7 @@ class Rute(db.Model):
 
     user_id = Column(Integer, ForeignKey(User.id))
     po_id = Column(Integer, ForeignKey(PO.id_po))
+    po_name = relationship(PO)
 
     is_public = Column(Boolean(), nullable=False)
 
@@ -79,12 +80,14 @@ class Data_pesanan(db.Model):
     __tablename__ = 'data pesanan'
     kode_pemesanan = Column(String, primary_key=True, unique=True)
     nama_pemesan = Column(String)
-    nomor_telepon = Column(VARCHAR)
-    alamat = Column(String)
-    tanggal_lahir = Column(DateTime)
+    email_pemesan = Column(VARCHAR)
+    nomor_telepon_pemesan = Column(VARCHAR)
+    title_penumpang = Column(String)
+    nama_penumpang = Column(String)
+    tanggal_lahir_penumpang = Column(Date)
     tanggal_pesanan_tiket = Column(DateTime)
-    jadwal_berangkat = Column(DateTime)
-    jumlah_kursi = Column(Integer)
+    jadwal_berangkat = Column(Date)
+    jumlah_kursi_yang_di_booking = Column(Integer)
     harga_total = Column(Integer)
 
     PENDING = "pending"
@@ -94,5 +97,23 @@ class Data_pesanan(db.Model):
 
     rute_id = Column(Integer, ForeignKey(Rute.id_rute))
     po_id = Column(Integer, ForeignKey(PO.id_po))
+
+    def __init__(self, rute_id, kode_pemesanan, nama_pemesan, email_pemesan, nomor_telepon_pemesan, title_penumpang,
+                 nama_penumpang, tanggal_lahir_penumpang, tanggal_pesanan_tiket, jadwal_berangkat,
+                 jumlah_kursi_yang_di_booking, harga_total, status_pembayaran):
+
+        self.rute_id = rute_id
+        self.kode_pemesanan = kode_pemesanan
+        self.nama_pemesan = nama_pemesan
+        self.email_pemesan = email_pemesan
+        self.nomor_telepon_pemesan = nomor_telepon_pemesan
+        self.title_penumpang = title_penumpang
+        self.nama_penumpang = nama_penumpang
+        self.tanggal_lahir_penumpang = tanggal_lahir_penumpang
+        self.tanggal_pesanan_tiket = tanggal_pesanan_tiket
+        self.jadwal_berangkat = jadwal_berangkat
+        self.jumlah_kursi_yang_di_booking = jumlah_kursi_yang_di_booking
+        self.harga_total = harga_total
+        self.status_pembayaran = status_pembayaran
 
 

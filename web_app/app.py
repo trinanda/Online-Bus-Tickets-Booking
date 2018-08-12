@@ -11,6 +11,11 @@ from web_app.form import LoginFormView, AddRuteForm, EditRuteForm
 from web_app.models import db, Data_pesanan, Role, User, Rute, PO
 from web_app.views import Data_pesananView, MyModelView, RuteView, PoView
 
+import string
+import random
+import time
+
+
 def create_app():
 
     app = Flask(__name__)
@@ -55,6 +60,9 @@ def create_app():
             tanggal_keberangkatan = request.form['tanggal_keberangkatan']
             jumlah_kursi_yang_di_booking = request.form['jumlah_kursi_yang_di_booking']
 
+            session['tanggal_keberangkatan'] = tanggal_keberangkatan
+            session['jumlah_kursi_yang_di_booking'] = jumlah_kursi_yang_di_booking
+
             cari_bis = db.session.query(Rute.id_rute, Rute.tujuan, Rute.ongkos, Rute.tanggal_keberangkatan, Rute.jam). \
                 filter(Rute.dari == dari, Rute.tujuan == tujuan, Rute.tanggal_keberangkatan == tanggal_keberangkatan).first()
 
@@ -70,9 +78,8 @@ def create_app():
         tujuan = request.args.get('tujuan')
         jumlah_kursi_yang_di_booking = request.args.get('jumlah_kursi_yang_di_booking')
 
-        urutan_tampilan = db.session.query(Rute.id_rute, Rute.dari, Rute.tujuan, Rute.ongkos, Rute.tanggal_keberangkatan, Rute.jam).\
-            filter(Rute.tanggal_keberangkatan == tanggal_keberangkatan, Rute.dari == dari, Rute.tujuan == tujuan)
-
+        urutan_tampilan = db.session.query(Rute.id_rute, Rute.dari, Rute.tujuan, Rute.ongkos, Rute.tanggal_keberangkatan, Rute.jam, PO.nama_po).\
+            join(PO).filter(Rute.tanggal_keberangkatan == tanggal_keberangkatan, Rute.dari == dari, Rute.tujuan == tujuan).all()
 
 
         session['jumlah_kursi_yang_di_booking'] = jumlah_kursi_yang_di_booking
@@ -87,46 +94,105 @@ def create_app():
     @app.route('/pastikan_harga', methods = ['GET', 'POST'])
     def pastikan_harga():
         id_rute = request.args.get('id_rute')
+
+        session['rute_id'] = id_rute
         jumlah_kursi_yang_di_booking = session['jumlah_kursi_yang_di_booking']
 
         harga = db.session.query(Rute.ongkos).filter(Rute.id_rute == id_rute).first()
         harga = harga[0]
         harga_total = int(harga) * int(jumlah_kursi_yang_di_booking)
 
+        session['harga_total'] = harga_total
+
         jam = db.session.query(Rute.jam).filter(Rute.id_rute == id_rute).first()
         jam = jam[0]
         tanggal_keberangkatan = db.session.query(Rute.tanggal_keberangkatan).filter(Rute.id_rute == id_rute).first()
         tanggal_keberangkatan = tanggal_keberangkatan[0]
+        session['tanggal_keberangkatan'] = tanggal_keberangkatan
         dari = db.session.query(Rute.dari).filter(Rute.id_rute == id_rute).first()
         dari = dari[0]
         tujuan = db.session.query(Rute.tujuan).filter(Rute.id_rute == id_rute).first()
         tujuan = tujuan[0]
 
+        nama_po = db.session.query(Rute.po_name, PO.nama_po).join(PO).filter(Rute.id_rute == id_rute).first()
+        nama_po = nama_po[1]
+
+        jumlah_kursi = jumlah_kursi_yang_di_booking
+
         if request.method == "get":
             return render_template("kontak.html")
 
-        return render_template("pastikan_harga.html", HARGA_TOTAL=harga_total, TANGGAL_KEBERANGKATAN=tanggal_keberangkatan,
+        return render_template("pastikan_harga.html", NAMA_PO=nama_po, JUMLAH_KURSI=jumlah_kursi, HARGA_TOTAL=harga_total, TANGGAL_KEBERANGKATAN=tanggal_keberangkatan,
                                JAM=jam, DARI=dari, TUJUAN=tujuan)
 
     @app.route('/kontak', methods = ['GET', 'POST'])
     def kontak():
-        if request.method == "POST":
-            nama_pemesan = request.form.get('nama_pemesan')
-            email = request.form.get('email')
-            nomor_telepon = request.form.get('nomor_telepon')
+        if request.method == "get":
+            session['nama_pemesan'] = request.form.get('nama_pemesan')
+            session['email'] = request.form.get('email')
+            session['nomor_handphone'] = request.form.get('nomor_handphone')
 
-            title_penumpang = request.form.get('title_penumpang')
-            nama_penumpang = request.form.get('nama_penumpang')
-            tanggal_lahir = request.form.get('tanggal_lahir')
+            session['title_penumpang'] = request.form.get('title_penumpang')
+            session['nama_penumpang'] = request.form.get('nama_penumpang')
+            session['tanggal_lahir'] = request.form.get('tanggal_lahir')
 
             return render_template("payment.html")
 
         return render_template('kontak.html')
 
     @app.route('/payment', methods = ['GET', 'POST'])
-    def payment():
-        if request.method == "get":
+    def payment(status='pending'):
+
+        # get invoice number
+        def generator_random(size=10, chars=string.ascii_uppercase + string.digits):
+            return ''.join(random.choice(chars) for x in range(size))
+
+        generate_invoice = 'TK' + generator_random() + 'INV'
+        session['GENERATE_INVOICE'] = generate_invoice
+        nomor_invoice = session['GENERATE_INVOICE']
+        # /get invoice number
+
+        # get current date
+        import time
+        tanggal_pemesanan = time.strftime("%d/%m/%Y")
+        tanggal_pemesanan_untuk_admin = time.strftime("%Y-%m-%d %H:%M:%S")
+        session['TANGGAL_PEMESANAN'] = tanggal_pemesanan
+        session['TANGGAL_PEMESANAN_UNTUK_ADMIN'] = tanggal_pemesanan_untuk_admin
+        tanggal_pemesanan = session['TANGGAL_PEMESANAN']
+        tanggal_pemesanan_untuk_admin = session['TANGGAL_PEMESANAN_UNTUK_ADMIN']
+        # /get current date
+
+        rute_id = session['rute_id']
+        nama_pemesan = request.args.get('nama_pemesan')
+        email = request.args.get('email')
+        nomor_telepon = request.args.get('nomor_handphone')
+        title_penumpang = request.args.get('title_penumpang')
+        nama_penumpang = request.args.get('nama_penumpang')
+        tanggal_lahir = request.args.get('tanggal_lahir')
+
+        if request.method == "POST":
+
+            kode_pemesanan = nomor_invoice
+            nama_pemesan = nama_pemesan
+            email_pemesan = email
+            nomor_telepon_pemesan = nomor_telepon
+            title_penumpang = title_penumpang
+            nama_penumpang = nama_penumpang
+            tanggal_lahir_penumpang = tanggal_lahir
+            tanggal_pesanan_tiket = tanggal_pemesanan_untuk_admin
+            jadwal_berangkat = session['tanggal_keberangkatan']
+            jumlah_kursi_yang_di_booking = session['jumlah_kursi_yang_di_booking']
+            harga_total = session['harga_total']
+            status_pembayaran = status
+
+            insert_to_db = Data_pesanan(rute_id ,kode_pemesanan, nama_pemesan, email_pemesan, nomor_telepon_pemesan, title_penumpang,
+                                        nama_penumpang, tanggal_lahir_penumpang, tanggal_pesanan_tiket, jadwal_berangkat,
+                                        jumlah_kursi_yang_di_booking, harga_total, status_pembayaran)
+            db.session.add(insert_to_db)
+            db.session.commit()
+
             return render_template('invoice.html')
+
         return render_template('payment.html')
 
     @app.route('/invoice')
@@ -229,24 +295,24 @@ def create_app():
             if form.validate_on_submit():
                 if current_user.is_authenticated and data.Rute.user_id == current_user.id:
                     data = Rute.query.filter_by(id_rute=rute_id).first()
-                    new_dari_rute = form.dari.data
-                    new_tujuan_rute = form.tujuan.data
-                    new_ongkos_rute = form.ongkos.data
-                    new_tanggal_keberangkatan_rute = form.tanggal_keberangkatan.data
-                    new_jam_rute = form.jam.data
+                    new_dari = form.dari.data
+                    new_tujuan = form.tujuan.data
+                    new_ongkos= form.ongkos.data
+                    new_tanggal_keberangkatan = form.tanggal_keberangkatan.data
+                    new_jam = form.jam.data
                     try:
-                        data.dari = new_dari_rute
-                        data.tujuan = new_tujuan_rute
-                        data.ongkos = new_ongkos_rute
-                        data.tanggal_keberangkatan = new_tanggal_keberangkatan_rute
-                        data.jam = new_jam_rute
+                        data.dari = new_dari
+                        data.tujuan = new_tujuan
+                        data.ongkos = new_ongkos
+                        data.tanggal_keberangkatan = new_tanggal_keberangkatan
+                        data.jam = new_jam
                         db.session.commit()
 
                     except Exception as e:
                         return {'error': str(e)}
                 return redirect(url_for('dashboard'))
 
-        return render_template('rute_edit.html', form=form, rute=data, NAMA_PO=nama_po)
+        return render_template('edit_rute.html', form=form, rute=data, NAMA_PO=nama_po)
 
 
     return app
