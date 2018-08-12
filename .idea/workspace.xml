@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d143f27-f569-4ca9-bb46-d8675d4303ad" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web_app/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/form.py" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/form.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/templates/check.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/templates/halaman_utama.html" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/templates/halaman_utama.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/templates/kontak.html" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/templates/kontak.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/templates/pastikan_harga.html" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/templates/pastikan_harga.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/templates/payment.html" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/templates/payment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/templates/theme.html" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/templates/theme.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,7 +25,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="2705" />
-          <entry key="py" value="4544" />
+          <entry key="py" value="4591" />
           <entry key="txt" value="29" />
         </counts>
       </usages-collector>
@@ -43,7 +33,7 @@
         <counts>
           <entry key="HTML" value="2705" />
           <entry key="Hoi4 file" value="29" />
-          <entry key="Python" value="4544" />
+          <entry key="Python" value="4591" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -74,11 +64,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web_app/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="184" column="79" lean-forward="true" selection-start-line="184" selection-start-column="79" selection-end-line="184" selection-end-column="79" />
+            <state relative-caret-position="238">
+              <caret line="241" column="47" selection-start-line="241" selection-start-column="47" selection-end-line="241" selection-end-column="47" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -86,11 +76,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web_app/templates/rute_edit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="34" column="57" selection-start-line="34" selection-start-column="57" selection-end-line="34" selection-end-column="57" />
+            <state relative-caret-position="48">
+              <caret line="28" column="82" selection-start-line="28" selection-start-column="75" selection-end-line="28" selection-end-column="82" />
             </state>
           </provider>
         </entry>
@@ -98,8 +88,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web_app/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="67" column="87" selection-start-line="67" selection-start-column="80" selection-end-line="67" selection-end-column="87" />
+            <state relative-caret-position="128">
+              <caret line="52" column="4" selection-start-line="52" selection-start-column="4" selection-end-line="52" selection-end-column="4" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
                 <marker date="1534070986277" expanded="true" signature="291:393" ph="..." />
@@ -126,8 +116,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web_app/form.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="25" column="55" selection-start-line="25" selection-start-column="55" selection-end-line="25" selection-end-column="55" />
+            <state relative-caret-position="295">
+              <caret line="25" column="55" lean-forward="true" selection-start-line="25" selection-start-column="55" selection-end-line="25" selection-end-column="55" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -156,8 +146,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Bukittingi</find>
-      <find>date</find>
       <find>bootstrap-datepicker</find>
       <find>tanggal</find>
       <find>for</find>
@@ -185,7 +173,9 @@
       <find>tanggal_keberangkatan</find>
       <find>kamar</find>
       <find>231</find>
+      <find>rute_id</find>
       <find>edit</find>
+      <find>is_authenticated</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -230,10 +220,10 @@
         <option value="$PROJECT_DIR$/web_app/templates/dashboard.html" />
         <option value="$PROJECT_DIR$/web_app/templates/tambah_rute.html" />
         <option value="$PROJECT_DIR$/web_app/models.py" />
-        <option value="$PROJECT_DIR$/web_app/app.py" />
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/web_app/form.py" />
         <option value="$PROJECT_DIR$/web_app/templates/rute_edit.html" />
+        <option value="$PROJECT_DIR$/web_app/app.py" />
       </list>
     </option>
   </component>
@@ -330,7 +320,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49848256" visible="true" weight="0.37562606" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49848256" visible="true" weight="0.26377296" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5015175" side_tool="true" weight="0.32888147" />
       <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.49848256" weight="0.32888147" />
       <window_info anchor="bottom" id="Python Console" order="11" weight="0.32885906" />
@@ -637,6 +627,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="42" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web_app/templates/tambah_rute.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
@@ -646,8 +643,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web_app/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="67" column="87" selection-start-line="67" selection-start-column="80" selection-end-line="67" selection-end-column="87" />
+        <state relative-caret-position="128">
+          <caret line="52" column="4" selection-start-line="52" selection-start-column="4" selection-end-line="52" selection-end-column="4" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
             <marker date="1534070986277" expanded="true" signature="291:393" ph="..." />
@@ -655,27 +652,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="42" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web_app/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="184" column="79" lean-forward="true" selection-start-line="184" selection-start-column="79" selection-end-line="184" selection-end-column="79" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web_app/form.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="25" column="55" selection-start-line="25" selection-start-column="55" selection-end-line="25" selection-end-column="55" />
+        <state relative-caret-position="295">
+          <caret line="25" column="55" lean-forward="true" selection-start-line="25" selection-start-column="55" selection-end-line="25" selection-end-column="55" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
@@ -684,8 +664,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web_app/templates/rute_edit.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="34" column="57" selection-start-line="34" selection-start-column="57" selection-end-line="34" selection-end-column="57" />
+        <state relative-caret-position="48">
+          <caret line="28" column="82" selection-start-line="28" selection-start-column="75" selection-end-line="28" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web_app/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="241" column="47" selection-start-line="241" selection-start-column="47" selection-end-line="241" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

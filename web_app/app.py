@@ -233,11 +233,13 @@ def create_app():
                     new_tujuan_rute = form.tujuan.data
                     new_ongkos_rute = form.ongkos.data
                     new_tanggal_keberangkatan_rute = form.tanggal_keberangkatan.data
+                    new_jam_rute = form.jam.data
                     try:
-                        data.nama_rute = new_dari_rute
-                        data.keterangan_rute = new_tujuan_rute
-                        data.harga_rute = new_ongkos_rute
-                        data.status = new_tanggal_keberangkatan_rute
+                        data.dari = new_dari_rute
+                        data.tujuan = new_tujuan_rute
+                        data.ongkos = new_ongkos_rute
+                        data.tanggal_keberangkatan = new_tanggal_keberangkatan_rute
+                        data.jam = new_jam_rute
                         db.session.commit()
 
                     except Exception as e:
