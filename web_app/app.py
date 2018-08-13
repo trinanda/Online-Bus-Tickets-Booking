@@ -1,3 +1,5 @@
+from datetime import date
+
 import flask_admin
 from flask import Flask, render_template, request, session, url_for, flash, make_response
 from flask_admin import Admin, helpers as admin_helpers
@@ -15,6 +17,10 @@ import string
 import random
 import time
 import pdfkit
+
+from web_app.settings import TWLIO_ACCOUNT_SID_NONE_UPGRADED_FOR_ADMIN, TWLIO_AUTH_TOKEN_NONE_UPGRADED_FOR_ADMIN, \
+    TWLIO_ACCOUNT_SID_UPGRADED_FOR_USER, TWLIO_AUTH_TOKEN_UPGRADED_FOR_USER
+from twilio.rest import Client
 
 def create_app():
 
@@ -165,6 +171,16 @@ def create_app():
 
         tanggal_keberangkatan = session['tanggal_keberangkatan']
         tanggal_keberangkatan = tanggal_keberangkatan[4:17]
+        day = tanggal_keberangkatan[:3]
+        month = tanggal_keberangkatan[3:7]
+        year = tanggal_keberangkatan[7:12]
+
+        tanggal_keberangkatan = tanggal_keberangkatan
+
+        print('xxx', day[:3])
+        print('xxx', month[3:7])
+        print('xxx', year[7:12])
+        print('xxx', tanggal_keberangkatan)
 
         if request.method == "POST":
             # get invoice number
@@ -194,7 +210,7 @@ def create_app():
             title_penumpang = title_penumpang
             nama_penumpang = nama_penumpang
             tanggal_lahir_penumpang = tanggal_lahir
-            tanggal_pesanan_tiket = tanggal_pemesanan
+            tanggal_pesanan_tiket = tanggal_pemesanan_untuk_admin
             jadwal_berangkat = tanggal_keberangkatan
             jumlah_kursi_yang_di_booking = jumlah_kursi
             harga_total = session['harga_total']
@@ -235,7 +251,6 @@ def create_app():
             response.headers['Content-Type'] = 'applications/pdf'
             response.headers['Content-Disposition'] = 'inline; filename=invoice.pdf'
             return response
-
 
 
     @app.route('/login', methods=['GET', 'POST'])
