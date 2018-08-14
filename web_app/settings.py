@@ -52,3 +52,15 @@ TWLIO_AUTH_TOKEN_NONE_UPGRADED_FOR_ADMIN = "98f8f99a6bcbe14e0f5b9ab50ae55a31"
 PDF_FOLDER = 'web_app/files/pdf/'
 TEMPLATE_FOLDER = 'web_app/templates/'
 #############################################################################################################
+
+
+#############################################################################################################
+#google map API
+# https://developers.google.com/places/web-service/get-api-key
+# https://developers.google.com/maps/documentation/javascript/get-api-key?hl=ID#key
+GOOGLE_MAP_API = "YOUR_GMAIL_API"
+# or
+# GOOGLEMAPS_KEY = "key"
+# if got some error try this solution:
+# https://stackoverflow.com/questions/37403731/this-page-didnt-load-google-maps-correctly-see-the-javascript-console-for-tech
+#############################################################################################################
