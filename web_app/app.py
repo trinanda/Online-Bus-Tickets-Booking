@@ -180,10 +180,6 @@ def create_app():
 
         tanggal_keberangkatan = tanggal_keberangkatan
 
-        print('xxx', day[:3])
-        print('xxx', month[3:7])
-        print('xxx', year[7:12])
-        print('xxx', tanggal_keberangkatan)
 
         if request.method == "POST":
             # get invoice number
@@ -224,6 +220,10 @@ def create_app():
                                         jadwal_berangkat, jumlah_kursi_yang_di_booking, harga_total, status_pembayaran)
             db.session.add(insert_to_db)
             db.session.commit()
+
+            db.session.query(Rute).filter_by(id_rute=rute_id).update({Rute.jumlah_kursi: Rute.jumlah_kursi - jumlah_kursi_yang_di_booking})
+            db.session.commit()
+
 
             return render_template('invoice.html', KODE_INVOICE=kode_pemesanan, TANGGAL_PESANAN=tanggal_pesanan_tiket,
                                    DARI=dari, TUJUAN=tujuan, JUMLAH_BANGKU=jumlah_kursi_yang_di_booking, TANGGAL_BERANGKAT=jadwal_berangkat, JAM=jam,
