@@ -29,6 +29,7 @@
 									<th>Ongkos</th>
 									<th>Tanggal Keberangkatan</th>
 									<th>Jam</th>
+									<th>Jumlah Kursi</th>
 									<th>Action</th>
 								</tr>
 							</thead>
@@ -40,6 +41,7 @@
 									<td>Rp.{{ list.ongkos }},00</td>
 									<td>{{ list.tanggal_keberangkatan }}</td>
 									<td>{{ list.jam }}</td>
+									<td>{{ list.jumlah_kursi }}</td>
 
                                     <td>
                                         <a href="{{ url_for('rute_delete', rute_id=list.id_rute) }}">Delete</a>

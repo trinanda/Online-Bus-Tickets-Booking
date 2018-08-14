@@ -17,6 +17,7 @@ class AddRuteForm(FlaskForm):
     ongkos = IntegerField('Ongkos', validators=[DataRequired()])
     tanggal_keberangkatan = DateField('Tanggal Keberangkatan', format='%Y-%m-%d', validators=[DataRequired()])
     jam = TimeField('Jam', validators=[DataRequired()])
+    jumlah_kursi = IntegerField('Ongkos', validators=[DataRequired()])
 
 class EditRuteForm(FlaskForm):
     dari = StringField('Dari', validators=[DataRequired()])
@@ -24,3 +25,4 @@ class EditRuteForm(FlaskForm):
     ongkos = IntegerField('Ongkos', validators=[DataRequired()])
     tanggal_keberangkatan = DateField('Tanggal Keberangkatan', format='%Y-%m-%d', validators=[DataRequired()])
     jam = TimeField('Jam', validators=[DataRequired()])
+    jumlah_kursi = IntegerField('Ongkos', validators=[DataRequired()])

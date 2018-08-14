@@ -301,7 +301,7 @@ def create_app():
         if request.method == 'POST':
             if form.validate_on_submit():
                 new_rute = Rute(form.dari.data, form.tujuan.data, form.ongkos.data,
-                                form.tanggal_keberangkatan.data, form.jam.data,
+                                form.tanggal_keberangkatan.data, form.jam.data, form.jumlah_kursi.data,
                                 current_user.id, current_user.po_id, False)
                 db.session.add(new_rute)
                 db.session.commit()

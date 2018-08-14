@@ -56,6 +56,7 @@ class Rute(db.Model):
     ongkos = Column(Integer)
     tanggal_keberangkatan = Column(Date)
     jam = Column(Time)
+    jumlah_kursi = Column(Integer)
 
     user_id = Column(Integer, ForeignKey(User.id))
     po_id = Column(Integer, ForeignKey(PO.id_po))
@@ -66,12 +67,14 @@ class Rute(db.Model):
     def __repr__(self):
         return self.tujuan
 
-    def __init__(self, dari='', tujuan='', ongkos='', tanggal_keberangkatan='', jam='', id=1, po_id='', is_public=False):
+    def __init__(self, dari='', tujuan='', ongkos='', tanggal_keberangkatan='', jam='', jumlah_kursi='',
+                 id=1, po_id='', is_public=False):
         self.dari = dari
         self.tujuan = tujuan
         self.ongkos = ongkos
         self.tanggal_keberangkatan = tanggal_keberangkatan
         self.jam = jam
+        self.jumlah_kursi = jumlah_kursi
         self.user_id = id
         self.po_id = po_id
         self.is_public = is_public
