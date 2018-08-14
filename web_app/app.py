@@ -84,11 +84,14 @@ def create_app():
         tujuan = request.args.get('tujuan')
         jumlah_kursi_yang_di_booking = request.args.get('jumlah_kursi_yang_di_booking')
 
-        urutan_tampilan = db.session.query(Rute.id_rute, Rute.dari, Rute.tujuan, Rute.ongkos, Rute.tanggal_keberangkatan, Rute.jam, PO.nama_po).\
-            join(PO).filter(Rute.tanggal_keberangkatan == tanggal_keberangkatan, Rute.dari == dari, Rute.tujuan == tujuan).all()
+        urutan_tampilan = db.session.query(Rute.id_rute, Rute.dari, Rute.tujuan, Rute.ongkos, Rute.tanggal_keberangkatan,
+                                           Rute.jam, PO.nama_po, Rute.jumlah_kursi).join(PO).\
+            filter(Rute.tanggal_keberangkatan == tanggal_keberangkatan, Rute.dari == dari, Rute.tujuan == tujuan,
+                             Rute.jumlah_kursi >= jumlah_kursi_yang_di_booking).all()
 
 
         session['jumlah_kursi_yang_di_booking'] = jumlah_kursi_yang_di_booking
+
 
 
         if request.method == "get":
