@@ -183,27 +183,29 @@ def create_app():
         rute_user_id = db.session.query(Rute.user_id).join(User).filter(Rute.id_rute == rute_id).first()[0]
         nomor_telepon_user_PO = db.session.query(User.nomor_telepon).filter_by(id=rute_user_id).first()[0]
 
+        # get invoice number
+        def generator_random(size=6, chars=string.ascii_uppercase + string.digits):
+            return ''.join(random.choice(chars) for x in range(size))
+
+        generate_invoice = 'TK' + generator_random() + 'INV'
+        kode_pembeli = generate_invoice
+        session['KODE_PEMBELI'] = kode_pembeli
+        # /get invoice number
+
+        # get current date
+        import time
+        tanggal_pemesanan = time.strftime("%d/%m/%Y")
+        tanggal_pemesanan_untuk_admin = time.strftime("%Y-%m-%d %H:%M:%S")
+        session['TANGGAL_PEMESANAN'] = tanggal_pemesanan
+        session['TANGGAL_PEMESANAN_UNTUK_ADMIN'] = tanggal_pemesanan_untuk_admin
+        tanggal_pemesanan = session['TANGGAL_PEMESANAN']
+        tanggal_pemesanan_untuk_admin = session['TANGGAL_PEMESANAN_UNTUK_ADMIN']
+        # /get current date
+
         if request.method == "POST":
-            # get invoice number
-            def generator_random(size=6, chars=string.ascii_uppercase + string.digits):
-                return ''.join(random.choice(chars) for x in range(size))
-
-            generate_invoice = 'TK' + generator_random() + 'INV'
-            kode_pembeli = generate_invoice
-            session['KODE_PEMBELI'] = kode_pembeli
-            # /get invoice number
-
-            # get current date
-            import time
-            tanggal_pemesanan = time.strftime("%d/%m/%Y")
-            tanggal_pemesanan_untuk_admin = time.strftime("%Y-%m-%d %H:%M:%S")
-            session['TANGGAL_PEMESANAN'] = tanggal_pemesanan
-            session['TANGGAL_PEMESANAN_UNTUK_ADMIN'] = tanggal_pemesanan_untuk_admin
-            tanggal_pemesanan = session['TANGGAL_PEMESANAN']
-            tanggal_pemesanan_untuk_admin = session['TANGGAL_PEMESANAN_UNTUK_ADMIN']
-            # /get current date
 
             kode_pemesanan = kode_pembeli
+            session['kode_pemesanan'] = kode_pemesanan
             po_name = nama_po
             nama_pemesan = nama_pemesan
             email_pemesan = email
@@ -260,9 +262,9 @@ def create_app():
 
         return render_template('payment.html')
 
-    @app.route('/invoice', methods = ['GET', 'POST'])
+    @app.route('/invoice', methods= ['POST', 'GET'])
     def invoice():
-        kode_pemesanan = session['KODE_PEMBELI']
+        kode_pemesanan = session['kode_pemesanan']
         tanggal_pesanan_tiket = session['TANGGAL_PEMESANAN']
         dari = session['dari']
         tujuan = session['tujuan']
