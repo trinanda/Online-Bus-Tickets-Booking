@@ -180,6 +180,8 @@ def create_app():
 
         tanggal_keberangkatan = tanggal_keberangkatan
 
+        rute_user_id = db.session.query(Rute.user_id).join(User).filter(Rute.id_rute == rute_id).first()[0]
+        nomor_telepon_user_PO = db.session.query(User.nomor_telepon).filter_by(id=rute_user_id).first()[0]
 
         if request.method == "POST":
             # get invoice number
@@ -214,6 +216,33 @@ def create_app():
             jumlah_kursi_yang_di_booking = jumlah_kursi
             harga_total = session['harga_total']
             status_pembayaran = status
+
+            message_to_user_PO = 'Ada yang memesan tiket dengan kode ' + kode_pemesanan + ' atas nama ' + nama_pemesan + \
+                                 ' dan jumlah kursi yang di booking sebanyak ' + str(jumlah_kursi_yang_di_booking) + \
+                                 ' dan harga totalnya adalah ' + str(harga_total) + ', jadwal keberangkatan nya adalah ' + \
+                                 ' pada tanggal ' + tanggal_keberangkatan + ' jam ' + jam
+
+            ###################################
+            # ######-->/ TWILIO ########
+            ###################################
+            # ############################ SMS for user PO ##########################
+            # # for user notifications
+            # # Your Account SID from twilio.com/console
+            # account_sid_user = TWLIO_ACCOUNT_SID_UPGRADED_FOR_USER
+            # # # # # Your Auth Token from twilio.com/console
+            # auth_token_user = TWLIO_AUTH_TOKEN_UPGRADED_FOR_USER
+            # # # #
+            # sms_client = Client(account_sid_user, auth_token_user)
+            # # # #
+            # nomor_telepon_pemesan = nomor_telepon
+            # message_pemesan = sms_client.messages.create(
+            #     to=nomor_telepon_user_PO,
+            #     from_="+12014307127",   # this upgraded number
+            #     body=message_to_user_PO)
+            # # #
+            # ######-->/ TWILIO ########
+            ###################################
+
 
             insert_to_db = Data_pesanan(rute_id ,kode_pemesanan, po_name, nama_pemesan, email_pemesan, nomor_telepon_pemesan,
                                         title_penumpang,nama_penumpang, tanggal_lahir_penumpang, tanggal_pesanan_tiket,

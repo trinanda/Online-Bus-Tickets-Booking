@@ -36,6 +36,7 @@ class User(db.Model, UserMixin):
     id = Column(Integer, primary_key=True)
     email = Column(String(255), unique=True)
     password = Column(String(255))
+    nomor_telepon = Column(VARCHAR(20))
     active = Column(Boolean())
     confirmed_at = Column(DateTime())
     roles = relationship('Role', secondary=roles_users,
