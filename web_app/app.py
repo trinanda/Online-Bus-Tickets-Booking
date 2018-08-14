@@ -1,17 +1,17 @@
 from datetime import date
-
+import sys, os
+sys.path.append(os.getcwd() + '/web_app') #sesuai dengan mark directory as sources
 import flask_admin
-from flask import Flask, render_template, request, session, url_for, flash, make_response
+from flask import Flask, render_template, request, session, url_for, flash, make_response, redirect
 from flask_admin import Admin, helpers as admin_helpers
 from flask_bootstrap import Bootstrap
 from flask_login import LoginManager, login_required, current_user, logout_user, login_user
 from flask_security import SQLAlchemyUserDatastore, Security
 from flask_security.utils import verify_password
-from werkzeug.utils import redirect
 
-from web_app.form import LoginFormView, AddRuteForm, EditRuteForm
-from web_app.models import db, Data_pesanan, Role, User, Rute, PO
-from web_app.views import Data_pesananView, MyModelView, RuteView, PoView
+from form import LoginFormView, AddRuteForm, EditRuteForm
+from models import db, Data_pesanan, Role, User, Rute, PO
+from views import Data_pesananView, MyModelView, RuteView, PoView
 
 import string
 import random
@@ -300,8 +300,9 @@ def create_app():
         nama_po = current_user.po_name
         if request.method == 'POST':
             if form.validate_on_submit():
+                add_jam = request.form['jam']
                 new_rute = Rute(form.dari.data, form.tujuan.data, form.ongkos.data,
-                                form.tanggal_keberangkatan.data, form.jam.data, form.jumlah_kursi.data,
+                                form.tanggal_keberangkatan.data, add_jam, form.jumlah_kursi.data,
                                 current_user.id, current_user.po_id, False)
                 db.session.add(new_rute)
                 db.session.commit()
@@ -352,13 +353,15 @@ def create_app():
                     new_tujuan = form.tujuan.data
                     new_ongkos= form.ongkos.data
                     new_tanggal_keberangkatan = form.tanggal_keberangkatan.data
-                    new_jam = form.jam.data
+                    new_jam = request.form['jam']
+                    new_jumlah_kursi = form.jumlah_kursi.data
                     try:
                         data.dari = new_dari
                         data.tujuan = new_tujuan
                         data.ongkos = new_ongkos
                         data.tanggal_keberangkatan = new_tanggal_keberangkatan
                         data.jam = new_jam
+                        data.jumlah_kursi = new_jumlah_kursi
                         db.session.commit()
 
                     except Exception as e:

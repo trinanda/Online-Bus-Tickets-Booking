@@ -32,8 +32,9 @@
                         {{ form.tujuan(value = rute.Rute.tujuan) }}
                         {{ form.ongkos(value = rute.Rute.ongkos) }}
                         {{ form.tanggal_keberangkatan(value = rute.Rute.tanggal_keberangkatan) }}
-                        {{ form.jam(value = rute.Rute.jam) }}
-                        <button class="btn btn-sm btn-success" type="submit">Edit Rute</button>
+                        <input type="time" name="jam" value="{{ rute.Rute.jam }}">
+                        {{ form.jumlah_kursi(value = rute.Rute.jumlah_kursi) }}
+                        <button class="btn btn-sm btn-success" type="submit">Edit Jadwal</button>
                     </form>
 
                 </div>

@@ -36,7 +36,7 @@
 							<tbody>
 							{% for list in rute %}
 								<tr class="odd gradeX">
-									<td><a href="{{ url_for('rute_details', rute_id=list.id_rute) }}">{{ list.dari }}</td>
+									<td>{#<a href="{{ url_for('rute_details', rute_id=list.id_rute) }}">#}{{ list.dari }}</td>
 									<td>{{ list.tujuan }}</td>
 									<td>Rp.{{ list.ongkos }},00</td>
 									<td>{{ list.tanggal_keberangkatan }}</td>
