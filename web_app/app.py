@@ -254,18 +254,18 @@ def create_app():
             ##################################
             ############################ SMS for user PO ##########################
             # for user notifications
-            # Your Account SID from twilio.com/console
-            # account_sid_user = TWLIO_ACCOUNT_SID_UPGRADED_FOR_USER
-            # # # # # Your Auth Token from twilio.com/console
-            # auth_token_user = TWLIO_AUTH_TOKEN_UPGRADED_FOR_USER
-            # # # #
-            # sms_client = Client(account_sid_user, auth_token_user)
-            # # # #
-            # nomor_telepon_pemesan = nomor_telepon
-            # message_pemesan = sms_client.messages.create(
-            #     to=nomor_telepon_user_PO,
-            #     from_="+12014307127",   # this upgraded number
-            #     body=message_to_user_PO)
+            ## Your Account SID from twilio.com/console
+            account_sid_user = TWLIO_ACCOUNT_SID_UPGRADED_FOR_USER
+            # # # # Your Auth Token from twilio.com/console
+            auth_token_user = TWLIO_AUTH_TOKEN_UPGRADED_FOR_USER
+            # # #
+            sms_client = Client(account_sid_user, auth_token_user)
+            # # #
+            nomor_telepon_pemesan = nomor_telepon
+            message_pemesan = sms_client.messages.create(
+                to=nomor_telepon_user_PO,
+                from_="+12014307127",   # this upgraded number
+                body=message_to_user_PO)
             # #
             ######-->/ TWILIO ########
             ##################################
