@@ -238,16 +238,23 @@ def create_app():
 
             message_to_admin = 'Ada yang memesan tiket dengan kode ' + kode_pemesanan
 
+            subject_to_pemesan = '---Nadia Tiket---'
 
-            message_to_pemesan_tiket = '---Nadia Tiket---'
+            msg_to_pemesan = 'Terima kasih ' + nama_pemesan + ' telah memesan tiket melalui layanan kami,' \
+                                                                  ' Silahkan melakukan pembayaran ke rekening berikut 012301230123 a/n Nadia Tiket,' \
+                                                                  ' sesuai dengan jumlah tiket yang Anda pesan, yaitu ' + \
+                                 str(jumlah_kursi_yang_di_booking) + ' dan total harga nya adalah ' + str(harga_total)
+
+            msg_to_admin = 'Ada yang memesan tiket ' + str(jumlah_kursi_yang_di_booking) + ' kursi ' + \
+                           ' dan harga totalnya adalah ' + str(harga_total)
 
 
-            ###################################
-            # ######-->/ TWILIO ########
-            ###################################
-            # ############################ SMS for user PO ##########################
-            # # for user notifications
-            # # Your Account SID from twilio.com/console
+            ##################################
+            ######-->/ TWILIO ########
+            ##################################
+            ############################ SMS for user PO ##########################
+            # for user notifications
+            # Your Account SID from twilio.com/console
             # account_sid_user = TWLIO_ACCOUNT_SID_UPGRADED_FOR_USER
             # # # # # Your Auth Token from twilio.com/console
             # auth_token_user = TWLIO_AUTH_TOKEN_UPGRADED_FOR_USER
@@ -259,80 +266,79 @@ def create_app():
             #     to=nomor_telepon_user_PO,
             #     from_="+12014307127",   # this upgraded number
             #     body=message_to_user_PO)
-            # # #
-            # ######-->/ TWILIO ########
+            # #
+            ######-->/ TWILIO ########
+            ##################################
+
+
+            ###################################
+            ##########-- GMAIL --##############
             ###################################
 
+            CLIENT_SECRET_FILE = 'web_app/api/client_secret.json'
 
-            # ###################################
-            # ##########-- GMAIL --##############
-            # ###################################
-            #
-            # # Path to the client_secret.json file downloaded from the Developer Console
-            # CLIENT_SECRET_FILE = 'client_secret.json'
-            #
-            # # Check https://developers.google.com/gmail/api/auth/scopes for all available scopes
-            # OAUTH_SCOPE = 'https://www.googleapis.com/auth/gmail.compose'
-            #
-            # # Location of the credentials storage file
-            # STORAGE = Storage('gmail.storage')
-            #
-            # # Start the OAuth flow to retrieve credentials
-            # flow = flow_from_clientsecrets(CLIENT_SECRET_FILE, scope=OAUTH_SCOPE)
-            # http = httplib2.Http()
-            #
-            # # Try to retrieve credentials from storage or run the flow to generate them
-            # credentials = STORAGE.get()
-            # if credentials is None or credentials.invalid:
-            #     credentials = run_flow(flow, STORAGE, http=http)
-            #
-            # # Authorize the httplib2.Http object with our credentials
-            # http = credentials.authorize(http)
-            #
-            # # Build the Gmail service from discovery
-            # gmail_service = build('gmail', 'v1', http=http)
-            #
-            # # TO PEMESAN
-            # # create a message to send
-            # message_to_pemesan = MIMEText("Terima kasih telah memesan tiket melalui BRAND")
-            # message_to_pemesan['to'] = "kalilinuxpayakumbuh@gmail.com"
-            # message_to_pemesan['from'] = "python.api123@gmail.com"
-            # message_to_pemesan['subject'] = "TESTING"
-            # raw_to_pemesan = base64.urlsafe_b64encode(message_to_pemesan.as_bytes())
-            # raw_to_pemesan = raw_to_pemesan.decode()
-            # body_to_pemesan = {'raw': raw_to_pemesan}
-            #
-            # # send it
-            # try:
-            #     message_to_pemesan = (
-            #         gmail_service.users().messages().send(userId="me", body=body_to_pemesan).execute())
-            #     print('Message Id: %s' % message_to_pemesan['id'])
-            #     print(message_to_pemesan)
-            # except Exception as error:
-            #     print('An error occurred: %s' % error)
-            #
-            # # TO ADMIN
-            # # create a message to send
-            # message_to_admin = MIMEText("Ada yang memesan kamar")
-            # message_to_admin['to'] = "pythonpayakumbuh@gmail.com"
-            # message_to_admin['from'] = "python.api123@gmail.com"
-            # # message_to_admin['from'] = "zidanecr7kaka@gmail.com"
-            # message_to_admin['subject'] = "TESTING"
-            # raw_to_admin = base64.urlsafe_b64encode(message_to_admin.as_bytes())
-            # raw_to_admin = raw_to_admin.decode()
-            # body_to_admin = {'raw': raw_to_admin}
-            #
-            # # send it
-            # try:
-            #     message_to_admin = (gmail_service.users().messages().send(userId="me", body=body_to_admin).execute())
-            #     print('Message Id: %s' % message_to_admin['id'])
-            #     print(message_to_admin)
-            # except Exception as error:
-            #     print('An error occurred: %s' % error)
-            #
-            # ###################################
-            # ##########-- GMAIL --##############
-            # ###################################
+            # Check https://developers.google.com/gmail/api/auth/scopes for all available scopes
+            OAUTH_SCOPE = 'https://www.googleapis.com/auth/gmail.compose'
+
+            # Location of the credentials storage file
+            STORAGE = Storage('web_app/api/gmail.storage')
+
+            # Start the OAuth flow to retrieve credentials
+            flow = flow_from_clientsecrets(CLIENT_SECRET_FILE, scope=OAUTH_SCOPE)
+            http = httplib2.Http()
+
+            # Try to retrieve credentials from storage or run the flow to generate them
+            credentials = STORAGE.get()
+            if credentials is None or credentials.invalid:
+                credentials = run_flow(flow, STORAGE, http=http)
+
+            # Authorize the httplib2.Http object with our credentials
+            http = credentials.authorize(http)
+
+            # Build the Gmail service from discovery
+            gmail_service = build('gmail', 'v1', http=http)
+
+            # TO PEMESAN
+            # create a message to send
+            message_to_pemesan = MIMEText(msg_to_pemesan)
+            message_to_pemesan['to'] = email_pemesan
+            message_to_pemesan['from'] = "nadiaazizah7676@gmail.com"
+            message_to_pemesan['subject'] = subject_to_pemesan
+            raw_to_pemesan = base64.urlsafe_b64encode(message_to_pemesan.as_bytes())
+            raw_to_pemesan = raw_to_pemesan.decode()
+            body_to_pemesan = {'raw': raw_to_pemesan}
+
+            # send it
+            try:
+                message_to_pemesan = (
+                    gmail_service.users().messages().send(userId="me", body=body_to_pemesan).execute())
+                print('Message Id: %s' % message_to_pemesan['id'])
+                print(message_to_pemesan)
+            except Exception as error:
+                print('An error occurred: %s' % error)
+
+            # TO ADMIN
+            # create a message to send
+            message_to_admin = MIMEText(msg_to_admin)
+            message_to_admin['to'] = "nadiaazizah1111@gmail.com"
+            message_to_admin['from'] = "nadiaazizah7676@gmail.com"
+            message_to_admin['subject'] = "Ada yang pesan tiket"
+            raw_to_admin = base64.urlsafe_b64encode(message_to_admin.as_bytes())
+            raw_to_admin = raw_to_admin.decode()
+            body_to_admin = {'raw': raw_to_admin}
+
+            # send it
+            try:
+                message_to_admin = (
+                    gmail_service.users().messages().send(userId="me", body=body_to_admin).execute())
+                print('Message Id: %s' % message_to_admin['id'])
+                print(message_to_admin)
+            except Exception as error:
+                print('An error occurred: %s' % error)
+
+            ###################################
+            ##########-- GMAIL --##############
+            ###################################
 
 
             insert_to_db = Data_pesanan(rute_id ,kode_pemesanan, po_name, nama_pemesan, email_pemesan, nomor_telepon_pemesan,
