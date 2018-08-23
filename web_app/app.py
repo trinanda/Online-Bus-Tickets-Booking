@@ -233,7 +233,7 @@ def create_app():
 
             message_to_user_PO = 'Ada yang memesan tiket dengan kode ' + kode_pemesanan + ' atas nama ' + nama_pemesan + \
                                  ' dan jumlah kursi yang di booking sebanyak ' + str(jumlah_kursi_yang_di_booking) + \
-                                 ' dan harga totalnya adalah ' + str(harga_total) + ', jadwal keberangkatan nya adalah ' + \
+                                 ' dan harga totalnya adalah ' + 'Rp.' + str(harga_total) + ',00' + ', jadwal keberangkatan nya adalah ' + \
                                  ' pada tanggal ' + tanggal_keberangkatan + ' jam ' + jam
 
             message_to_admin = 'Ada yang memesan tiket dengan kode ' + kode_pemesanan
@@ -243,10 +243,10 @@ def create_app():
             msg_to_pemesan = 'Terima kasih ' + nama_pemesan + ' telah memesan tiket melalui layanan kami,' \
                                                                   ' Silahkan melakukan pembayaran ke rekening berikut 012301230123 a/n Nadia Tiket,' \
                                                                   ' sesuai dengan jumlah tiket yang Anda pesan, yaitu ' + \
-                                 str(jumlah_kursi_yang_di_booking) + ' dan total harga nya adalah ' + str(harga_total)
+                                 str(jumlah_kursi_yang_di_booking) + ' dan total harga nya adalah ' + 'Rp.' + str(harga_total) + ',00'
 
             msg_to_admin = 'Ada yang memesan tiket ' + str(jumlah_kursi_yang_di_booking) + ' kursi ' + \
-                           ' dan harga totalnya adalah ' + str(harga_total)
+                           ' dan harga totalnya adalah ' + 'Rp.' + str(harga_total) + ',00'
 
 
             ##################################
