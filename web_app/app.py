@@ -154,6 +154,8 @@ def create_app():
 
     @app.route('/kontak', methods = ['GET', 'POST'])
     def kontak():
+        jumlah_kursi = session['jumlah_kursi_yang_di_booking']
+        jumlah_kursi = int(jumlah_kursi)
         if request.method == "get":
             session['nama_pemesan'] = request.form.get('nama_pemesan')
             session['email'] = request.form.get('email')
@@ -165,7 +167,7 @@ def create_app():
 
             return render_template("payment.html")
 
-        return render_template('kontak.html')
+        return render_template('kontak.html', booking=jumlah_kursi)
 
     @app.route('/payment', methods = ['GET', 'POST'])
     def payment(status='pending'):

@@ -83,7 +83,8 @@ $( document ).ready(function() {
 
 				<label class="label-input100">Title </label>
 
-
+				{% for contact in range(booking) %}
+				<b>Penumpang {{ contact }}</b><br>
 				<div class="wrap-input100 validate-input">
 					<select class="form-control" name="title_penumpang">
 						<option value="Tuan">Tuan</option>
@@ -107,7 +108,7 @@ $( document ).ready(function() {
 						<input name="tanggal_lahir" type="text" id="from-datepicker" class="form-control date" placeholder="Tanggal Lahir" required>
 					</div>
 				</div>
-
+				{% endfor %}
 				<div class="container-contact100-form-btn">
 					<button class="contact100-form-btn">
 						<span>
