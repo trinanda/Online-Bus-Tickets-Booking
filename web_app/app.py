@@ -154,8 +154,12 @@ def create_app():
 
     @app.route('/kontak', methods = ['GET', 'POST'])
     def kontak():
-        jumlah_kursi = session['jumlah_kursi_yang_di_booking']
-        jumlah_kursi = int(jumlah_kursi)
+        seat = session['jumlah_kursi_yang_di_booking']
+        seat = int(seat)
+        jumlah_kursi = None
+        for i in range(1, seat):
+            jumlah_kursi = i
+
         if request.method == "get":
             session['nama_pemesan'] = request.form.get('nama_pemesan')
             session['email'] = request.form.get('email')

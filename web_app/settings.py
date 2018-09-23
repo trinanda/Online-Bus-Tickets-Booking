@@ -32,19 +32,19 @@ SECURITY_SEND_REGISTER_EMAIL = False
 # Your Account SID from twilio.com/console
 
 # this upgraded SID for user
-TWLIO_ACCOUNT_SID_UPGRADED_FOR_USER = "ACe211524106753eb639d9fae6ebd35bb2"
+TWLIO_ACCOUNT_SID_UPGRADED_FOR_USER = "YOUR_TWILIO_SID"
 
 # this non upgrade SID for admin
-TWLIO_ACCOUNT_SID_NONE_UPGRADED_FOR_ADMIN = "ACe335c5f83a4c6a3dc22f25cb5fe3d74d"
+TWLIO_ACCOUNT_SID_NONE_UPGRADED_FOR_ADMIN = "YOUR_TWILIO_SID"
 
 
 # Your Auth Token from twilio.com/console
 
 # this upgraded auth_token for user
-TWLIO_AUTH_TOKEN_UPGRADED_FOR_USER = "2d7c15d4df5846d341c3a67a7fec9b9b"
+TWLIO_AUTH_TOKEN_UPGRADED_FOR_USER = "YOUR_TWILIO_AUTH_TOKEN"
 
 # this none upgraded auth_token for admin
-TWLIO_AUTH_TOKEN_NONE_UPGRADED_FOR_ADMIN = "98f8f99a6bcbe14e0f5b9ab50ae55a31"
+TWLIO_AUTH_TOKEN_NONE_UPGRADED_FOR_ADMIN = "YOUR_TWILIO_AUTH_TOKEN"
 
 #############################################################################################################
 
@@ -53,14 +53,3 @@ PDF_FOLDER = 'web_app/files/pdf/'
 TEMPLATE_FOLDER = 'web_app/templates/'
 #############################################################################################################
 
-
-#############################################################################################################
-#google map API
-# https://developers.google.com/places/web-service/get-api-key
-# https://developers.google.com/maps/documentation/javascript/get-api-key?hl=ID#key
-GOOGLE_MAP_API = "YOUR_GMAIL_API"
-# or
-# GOOGLEMAPS_KEY = "key"
-# if got some error try this solution:
-# https://stackoverflow.com/questions/37403731/this-page-didnt-load-google-maps-correctly-see-the-javascript-console-for-tech
-#############################################################################################################

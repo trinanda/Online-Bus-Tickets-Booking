@@ -146,3 +146,8 @@ class Data_pesanan(db.Model):
         self.jumlah_kursi_yang_di_booking = jumlah_kursi_yang_di_booking
         self.harga_total = harga_total
         self.status_pembayaran = status_pembayaran
+
+class testing(db.Model):
+    id = Column(Integer, primary_key=True)
+    nama = Column(String)
+
